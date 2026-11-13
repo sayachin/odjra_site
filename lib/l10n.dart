@@ -234,7 +234,7 @@ final Map<String, Map<String, String>> _strings = {
     'en': 'Pick your version: rider or driver.',
     'tzm': 'ⵙⵜⵉ ⵍⵇⵉⵙⵎ ⵏⵏⴽ: ⴰⵔⴰⴽⴰⴱ ⵏⵖ ⴰⵎⵙⴻⴱⵔⵉⴷ.',
   },
-  'riderAppName': {'ar': 'أجرة — راكب', 'fr': 'Odjra — Passager', 'en': 'Odjra — Rider', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵔⴰⴽⴰⴱ'},
+  'riderAppName': {'ar': 'أجرة — زبون', 'fr': 'Odjra — Passager', 'en': 'Odjra — Rider', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵔⴰⴽⴰⴱ'},
   'riderAppDesc': {
     'ar': 'للمستخدمين الذين يريدون التنقّل بسهولة.',
     'fr': 'Pour les passagers qui veulent se déplacer facilement.',

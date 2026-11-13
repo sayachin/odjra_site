@@ -66,7 +66,7 @@ const Map<String, String> termsByLocale = {
 
 7.2 حل النزاعات
 
- في حال نشوء نزاع بين الركاب والسائقين، يجب على المستخدمين التواصل مع فريق الدعم لدينا عبر البريد الإلكتروني على odjra@odjradz.com وتقديم الأدلة ذات الصلة لحل النزاع.
+ في حال نشوء نزاع بين الركاب والسائقين، يجب على المستخدمين التواصل مع فريق الدعم لدينا عبر البريد الإلكتروني على ayachine@odjra.com وتقديم الأدلة ذات الصلة لحل النزاع.
 
 7.3 عدم المسؤولية عن تصرفات الأطراف الثالثة
 
@@ -102,7 +102,7 @@ const Map<String, String> termsByLocale = {
 
 11.1 دعم العملاء وحل المشكلات 
 
- التعامل مع الشكاوى يجب تقديم جميع الشكاوى إلى فريق الدعم لدينا عبر البريد الإلكتروني على odjra@odjradz.com. يُرجى تقديم معلومات مفصلة والأدلة ذات الصلة لتسهيل حل سريع
+ التعامل مع الشكاوى يجب تقديم جميع الشكاوى إلى فريق الدعم لدينا عبر البريد الإلكتروني على ayachine@odjra.com. يُرجى تقديم معلومات مفصلة والأدلة ذات الصلة لتسهيل حل سريع
 
 12.1 الملكية الفكرية 
 
@@ -128,7 +128,7 @@ const Map<String, String> termsByLocale = {
 
  إذا كان لديك أي أسئلة أو مخاوف بشأن هذه الشروط، يرجى الاتصال بنا على:
 
-البريد الإلكتروني: odjra@odjradz.com
+البريد الإلكتروني: ayachine@odjra.com
 
 العنوان:''',
   'fr': r'''Conditions Générales
@@ -183,7 +183,7 @@ Actuellement, notre application ne comprend pas de protocoles de sécurité spé
 Odjra (أجرة) n'est pas responsable des incidents survenant pendant un trajet, y compris les accidents, dommages ou blessures, impliquant les Passagers ou les Chauffeurs.
 
 7.2 Résolution des Conflits
-En cas de conflit entre Passagers et Chauffeurs, les utilisateurs doivent contacter notre équipe de support par email à l'adresse odjra@odjradz.com et fournir les preuves pertinentes pour une résolution.
+En cas de conflit entre Passagers et Chauffeurs, les utilisateurs doivent contacter notre équipe de support par email à l'adresse ayachine@odjra.com et fournir les preuves pertinentes pour une résolution.
 
 7.3 Absence de Responsabilité pour les Actions de Tiers
 Nous déclinons toute responsabilité pour les actions ou omissions des prestataires de services tiers ou des Chauffeurs.
@@ -213,7 +213,7 @@ Nous pouvons proposer des promotions ou réductions occasionnellement. Les condi
 
 11. Service Client et Résolution des Problèmes
 11.1 Gestion des Plaintes
-Toutes les plaintes doivent être soumises à notre équipe de support par email à l'adresse odjra@odjradz.com. Veuillez fournir des informations détaillées et des preuves pertinentes pour faciliter une résolution rapide.
+Toutes les plaintes doivent être soumises à notre équipe de support par email à l'adresse ayachine@odjra.com. Veuillez fournir des informations détaillées et des preuves pertinentes pour faciliter une résolution rapide.
 
 12. Propriété Intellectuelle
 12.1 Propriété
@@ -234,7 +234,7 @@ Nous nous réservons le droit de modifier ces Conditions à tout moment. Les Con
 15. Coordonnées
 Si vous avez des questions ou des préoccupations concernant ces Conditions, veuillez nous contacter à :
 
-Email : odjra@odjradz.com
+Email : ayachine@odjra.com
 
 Adresse : [Adresse de Votre Société]''',
   'en': r'''Terms and Conditions
@@ -288,7 +288,7 @@ Currently, our app does not include specific safety protocols such as in-app eme
 Odjra (أجرة) is not responsible for any incidents occurring during a ride, including accidents, damages, or injuries, whether involving Riders or Drivers.
 
 7.2 Dispute Resolution
-In the event of a dispute between Riders and Drivers, Users must contact our support team via email at odjra@odjradz.com and provide relevant evidence for resolution.
+In the event of a dispute between Riders and Drivers, Users must contact our support team via email at ayachine@odjra.com and provide relevant evidence for resolution.
 
 7.3 No Liability for Third-Party Actions
 We do not hold liability for actions or omissions by third-party service providers or Drivers.
@@ -318,7 +318,7 @@ We may offer promotions or discounts from time to time. Terms and conditions for
 
 11. Customer Support and Issue Resolution
 11.1 Complaint Handling
-All complaints must be submitted to our support team via email at odjra@odjradz.com. Please provide detailed information and relevant evidence to facilitate prompt resolution.
+All complaints must be submitted to our support team via email at ayachine@odjra.com. Please provide detailed information and relevant evidence to facilitate prompt resolution.
 
 12. Intellectual Property
 12.1 Ownership
@@ -339,7 +339,7 @@ We reserve the right to modify these Terms at any time. Updated Terms will be ef
 15. Contact Information
 If you have any questions or concerns about these Terms, please contact us at:
 
-Email: odjra@odjradz.com
+Email: ayachine@odjra.com
 
 Address: [Your Company Address]''',
 };

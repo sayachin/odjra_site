@@ -8,7 +8,7 @@ import 'theme.dart';
 
 const riderStoreUrl = 'https://play.google.com/store/apps/details?id=com.ojra.rider';
 const driverStoreUrl = 'https://play.google.com/store/apps/details?id=com.ojra.driver';
-const supportEmail = 'odjra@odjradz.com';
+const supportEmail = 'ayachine@odjra.com';
 
 Future<void> openUrl(String url) async {
   final uri = Uri.parse(url);
