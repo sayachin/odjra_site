@@ -49,7 +49,7 @@ class L10n extends ChangeNotifier {
 final Map<String, Map<String, String>> _strings = {
   // Brand
   'brandName': {
-    'ar': 'أودجرا',
+    'ar': 'أجرة',
     'fr': 'Odjra',
     'en': 'Odjra',
     'tzm': 'ⵓⴷⵊⵔⴰ',
@@ -79,13 +79,13 @@ final Map<String, Map<String, String>> _strings = {
     'tzm': 'ⵢⴰⵏ ⵓⵙⵏⴼⴰⵔ ⴰⴷ ⴽ ⵢⴰⵡⵉ ⵖ ⴽⵓⵍⵍⵓ ⴰⴷⵖⴰⵔ.',
   },
   'heroCtaRider': {
-    'ar': 'حمّل تطبيق الركّاب',
+    'ar': 'حمّل التطبيق',
     'fr': "Télécharger l'app passager",
     'en': 'Get the rider app',
     'tzm': 'ⵙⴷⵔⵙ ⴰⵙⵏⴼⴰⵔ ⵏ ⵓⵔⴰⴽⴰⴱ',
   },
   'heroCtaDriver': {
-    'ar': 'كن سائقاً شريكاً',
+    'ar': 'كن سائقاًً',
     'fr': 'Devenir chauffeur partenaire',
     'en': 'Become a driver partner',
     'tzm': 'ⴰⵡⴹ ⴰⵎⵙⴻⴱⵔⵉⴷ',
@@ -93,20 +93,20 @@ final Map<String, Map<String, String>> _strings = {
 
   // Navigation
   'navHome': {'ar': 'الرئيسية', 'fr': 'Accueil', 'en': 'Home', 'tzm': 'ⴰⵙⵏⵓⴱⴳ'},
-  'navWhy': {'ar': 'لماذا أودجرا؟', 'fr': 'Pourquoi Odjra', 'en': 'Why Odjra', 'tzm': 'ⵎⴰⵅⴼ ⵓⴷⵊⵔⴰ'},
+  'navWhy': {'ar': 'لماذا أجره؟', 'fr': 'Pourquoi Odjra', 'en': 'Why Odjra', 'tzm': 'ⵎⴰⵅⴼ ⵓⴷⵊⵔⴰ'},
   'navDrivers': {'ar': 'السائقون', 'fr': 'Chauffeurs', 'en': 'Drivers', 'tzm': 'ⵉⵏⵙⴻⴱⵔⵉⴷⵏ'},
   'navDownload': {'ar': 'التطبيقات', 'fr': 'Applications', 'en': 'Apps', 'tzm': 'ⵉⵙⵏⴼⴰⵔⵏ'},
   'navTerms': {'ar': 'الشروط والأحكام', 'fr': 'Conditions', 'en': 'Terms', 'tzm': 'ⵜⵉⴼⴰⴷⵉⵡⵉⵏ'},
 
   // Why riders trust us
   'whyTitle': {
-    'ar': 'لماذا يثق بنا الركّاب؟',
+    'ar': 'لماذا يثق بنا الزبائن؟',
     'fr': 'Pourquoi les passagers nous font confiance',
     'en': 'Why riders trust us',
     'tzm': 'ⵎⴰⵅⴼ ⴰ ⵖ ⵜⵜⴰⵎⴰⵏⵏ ⵉⵎⵙⵏⵉⴳ',
   },
   'whySubtitle': {
-    'ar': 'صمّمنا أودجرا ليكون بسيطاً وموثوقاً ومحلياً.',
+    'ar': 'صمّمنا أجرة ليكون بسيطاً وموثوقاً ومحلياً.',
     'fr': 'Odjra est pensé simple, fiable et local.',
     'en': 'Odjra is built to be simple, reliable and local.',
     'tzm': 'ⵓⴷⵊⵔⴰ ⵢⴻⵙⵏⴼⴰⵍ ⴰⴷ ⵢⵉⵍⵉ ⴼⵙⵓⵙ, ⵢⵓⵎⵏ ⴷ ⴰⴷⵖⴰⵔⴰⵏ.',
@@ -234,14 +234,14 @@ final Map<String, Map<String, String>> _strings = {
     'en': 'Pick your version: rider or driver.',
     'tzm': 'ⵙⵜⵉ ⵍⵇⵉⵙⵎ ⵏⵏⴽ: ⴰⵔⴰⴽⴰⴱ ⵏⵖ ⴰⵎⵙⴻⴱⵔⵉⴷ.',
   },
-  'riderAppName': {'ar': 'أودجرا — راكب', 'fr': 'Odjra — Passager', 'en': 'Odjra — Rider', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵔⴰⴽⴰⴱ'},
+  'riderAppName': {'ar': 'أجرة — راكب', 'fr': 'Odjra — Passager', 'en': 'Odjra — Rider', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵔⴰⴽⴰⴱ'},
   'riderAppDesc': {
     'ar': 'للمستخدمين الذين يريدون التنقّل بسهولة.',
     'fr': 'Pour les passagers qui veulent se déplacer facilement.',
     'en': 'For riders who want to get around easily.',
     'tzm': 'ⵉ ⵉⵎⵙⵏⵉⴳ ⵢⴻⴱⵖⴰⵏ ⴰⴷ ⵉⵏⵉⴳ ⵙ ⵜⵉⴼⵔⴰⵜ.',
   },
-  'driverAppName': {'ar': 'أودجرا — سائق', 'fr': 'Odjra — Chauffeur', 'en': 'Odjra — Driver', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵎⵙⴻⴱⵔⵉⴷ'},
+  'driverAppName': {'ar': 'أجرة — سائق', 'fr': 'Odjra — Chauffeur', 'en': 'Odjra — Driver', 'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵎⵙⴻⴱⵔⵉⴷ'},
   'driverAppDesc': {
     'ar': 'للسائقين المستقلّين الذين يريدون دخلاً مرناً.',
     'fr': 'Pour les chauffeurs indépendants qui veulent un revenu flexible.',
@@ -277,13 +277,13 @@ final Map<String, Map<String, String>> _strings = {
 
   // Footer
   'footerTagline': {
-    'ar': 'أودجرا — نقل بسيط وموثوق في الجزائر.',
+    'ar': 'أجرة — نقل بسيط وموثوق في الجزائر.',
     'fr': 'Odjra — un transport simple et fiable en Algérie.',
     'en': 'Odjra — simple, reliable transport in Algeria.',
     'tzm': 'ⵓⴷⵊⵔⴰ — ⴰⵙⵏⵓⴱⴳ ⵉⴼⵙⵙⴻⵏ ⴷ ⵢⵓⵎⵏ ⴷⵉ ⴷⵣⴰⵢⵔ.',
   },
   'footerRights': {
-    'ar': '© 2026 أودجرا. جميع الحقوق محفوظة.',
+    'ar': '© 2026 أجرة. جميع الحقوق محفوظة.',
     'fr': '© 2026 Odjra. Tous droits réservés.',
     'en': '© 2026 Odjra. All rights reserved.',
     'tzm': '© 2026 ⵓⴷⵊⵔⴰ. ⴰⴽⴽ ⵉⵣⵔⴼⴰⵏ ⵉⵏⵏⴰⵍⵏ.',
