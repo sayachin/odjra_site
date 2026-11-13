@@ -75,17 +75,16 @@ class OdjraLogo extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         Container(
-          width: 36,
-          height: 36,
-          decoration: BoxDecoration(
-            gradient: const LinearGradient(
-              colors: [OdjraColors.primaryBright, OdjraColors.burgundy],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+          width: 50,
+          height: 50,
+          child: ClipOval(
+            child: Image.asset(
+              'assets/images/rider_icon_for_navbar.png',
+              width: 50,
+              height: 50,
+              fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(11),
           ),
-          child: const Icon(Icons.navigation_rounded, color: Colors.white, size: 21),
         ),
         const SizedBox(width: 10),
         Text(
