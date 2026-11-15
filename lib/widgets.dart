@@ -8,7 +8,7 @@ import 'theme.dart';
 
 const riderStoreUrl = 'https://play.google.com/store/apps/details?id=com.ojra.rider';
 const driverStoreUrl = 'https://play.google.com/store/apps/details?id=com.ojra.driver';
-const supportEmail = 'ayachine@odjra.com';
+const supportEmail = 'ojra@ojra-dz.com';
 
 Future<void> openUrl(String url) async {
   final uri = Uri.parse(url);
@@ -49,7 +49,7 @@ class GradientText extends StatelessWidget {
   Widget build(BuildContext context) {
     final isTifinagh = L10n.instance.isTifinagh;
     return ShaderMask(
-      shaderCallback: (bounds) => OdjraColors.neonGradient.createShader(bounds),
+      shaderCallback: (bounds) => OjraColors.neonGradient.createShader(bounds),
       blendMode: BlendMode.srcIn,
       child: Text(
         text,
@@ -64,13 +64,13 @@ class GradientText extends StatelessWidget {
   }
 }
 
-class OdjraLogo extends StatelessWidget {
+class OjraLogo extends StatelessWidget {
   final bool dark;
-  const OdjraLogo({super.key, this.dark = true});
+  const OjraLogo({super.key, this.dark = true});
 
   @override
   Widget build(BuildContext context) {
-    final color = dark ? Colors.white : OdjraColors.textPrimary;
+    final color = dark ? Colors.white : OjraColors.textPrimary;
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
@@ -88,7 +88,7 @@ class OdjraLogo extends StatelessWidget {
         ),
         const SizedBox(width: 10),
         Text(
-          'ODJRA',
+          'OJRA',
           style: TextStyle(color: color, fontSize: 20, fontWeight: FontWeight.w900, letterSpacing: 1.6),
         ),
       ],
@@ -105,25 +105,25 @@ class LanguageSwitcher extends StatelessWidget {
       tooltip: L10n.instance.t('footerContact'),
       onSelected: L10n.instance.setLocale,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-      color: OdjraColors.surface,
+      color: OjraColors.surface,
       icon: Container(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         decoration: BoxDecoration(
-          color: OdjraColors.surface,
+          color: OjraColors.surface,
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: OdjraColors.surfaceBorder),
+          border: Border.all(color: OjraColors.surfaceBorder),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(Icons.language_rounded, size: 18, color: OdjraColors.textSecondary),
+            const Icon(Icons.language_rounded, size: 18, color: OjraColors.textSecondary),
             const SizedBox(width: 6),
             Text(
               L10n.localeName(L10n.instance.locale),
-              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: OdjraColors.textPrimary),
+              style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w700, color: OjraColors.textPrimary),
             ),
             const SizedBox(width: 4),
-            const Icon(Icons.expand_more_rounded, size: 16, color: OdjraColors.textMuted),
+            const Icon(Icons.expand_more_rounded, size: 16, color: OjraColors.textMuted),
           ],
         ),
       ),
@@ -138,7 +138,7 @@ class LanguageSwitcher extends StatelessWidget {
                   height: 26,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: code == L10n.instance.locale ? OdjraColors.primary : OdjraColors.surfaceBorder,
+                    color: code == L10n.instance.locale ? OjraColors.primary : OjraColors.surfaceBorder,
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
@@ -146,7 +146,7 @@ class LanguageSwitcher extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w800,
-                      color: code == L10n.instance.locale ? Colors.white : OdjraColors.textSecondary,
+                      color: code == L10n.instance.locale ? Colors.white : OjraColors.textSecondary,
                     ),
                   ),
                 ),
@@ -156,7 +156,7 @@ class LanguageSwitcher extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: code == L10n.instance.locale ? FontWeight.w800 : FontWeight.w500,
-                    color: OdjraColors.textPrimary,
+                    color: OjraColors.textPrimary,
                   ),
                 ),
               ],
@@ -185,8 +185,8 @@ class SiteNavbar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       decoration: BoxDecoration(
-        color: OdjraColors.bg.withValues(alpha: 0.85),
-        border: const Border(bottom: BorderSide(color: OdjraColors.surfaceBorder)),
+        color: OjraColors.bg.withValues(alpha: 0.85),
+        border: const Border(bottom: BorderSide(color: OjraColors.surfaceBorder)),
       ),
       child: SafeArea(
         bottom: false,
@@ -195,7 +195,7 @@ class SiteNavbar extends StatelessWidget {
             constraints: const BoxConstraints(maxWidth: 1120),
             child: Row(
               children: [
-                const OdjraLogo(),
+                const OjraLogo(),
                 const Spacer(),
                 if (!isMobile) ...[
                   ...items.map(
@@ -203,7 +203,7 @@ class SiteNavbar extends StatelessWidget {
                       onPressed: () => onNavigate(e.$2),
                       child: Text(
                         L10n.instance.t(e.$1),
-                        style: const TextStyle(color: OdjraColors.textSecondary, fontWeight: FontWeight.w600, fontSize: 14),
+                        style: const TextStyle(color: OjraColors.textSecondary, fontWeight: FontWeight.w600, fontSize: 14),
                       ),
                     ),
                   ),
@@ -222,17 +222,17 @@ class SiteNavbar extends StatelessWidget {
                   PopupMenuButton<String>(
                     onSelected: onNavigate,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-                    color: OdjraColors.surface,
+                    color: OjraColors.surface,
                     icon: Container(
                       padding: const EdgeInsets.all(8),
-                      decoration: BoxDecoration(color: OdjraColors.surface, borderRadius: BorderRadius.circular(10), border: Border.all(color: OdjraColors.surfaceBorder)),
-                      child: const Icon(Icons.menu_rounded, color: OdjraColors.textPrimary),
+                      decoration: BoxDecoration(color: OjraColors.surface, borderRadius: BorderRadius.circular(10), border: Border.all(color: OjraColors.surfaceBorder)),
+                      child: const Icon(Icons.menu_rounded, color: OjraColors.textPrimary),
                     ),
                     itemBuilder: (context) => [
                       for (final e in items)
                         PopupMenuItem<String>(
                           value: e.$2,
-                          child: Text(L10n.instance.t(e.$1), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: OdjraColors.textPrimary)),
+                          child: Text(L10n.instance.t(e.$1), style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: OjraColors.textPrimary)),
                         ),
                     ],
                   ),
@@ -263,9 +263,9 @@ class SiteFooter extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const OdjraLogo(),
+                const OjraLogo(),
                 const SizedBox(height: 16),
-                Text(L10n.instance.t('footerTagline'), textAlign: TextAlign.center, style: const TextStyle(color: OdjraColors.textSecondary, fontSize: 15)),
+                Text(L10n.instance.t('footerTagline'), textAlign: TextAlign.center, style: const TextStyle(color: OjraColors.textSecondary, fontSize: 15)),
                 const SizedBox(height: 24),
                 Wrap(
                   alignment: WrapAlignment.center,
@@ -274,23 +274,23 @@ class SiteFooter extends StatelessWidget {
                   children: [
                     TextButton.icon(
                       onPressed: () => openUrl('mailto:$supportEmail'),
-                      style: TextButton.styleFrom(foregroundColor: OdjraColors.primaryBright),
+                      style: TextButton.styleFrom(foregroundColor: OjraColors.primaryBright),
                       icon: const Icon(Icons.email_rounded, size: 18),
                       label: Text(supportEmail, style: const TextStyle(fontSize: 14)),
                     ),
                     TextButton(
                       onPressed: () => Navigator.of(context).pushNamed('/terms'),
-                      style: TextButton.styleFrom(foregroundColor: OdjraColors.primaryBright),
+                      style: TextButton.styleFrom(foregroundColor: OjraColors.primaryBright),
                       child: Text(L10n.instance.t('navTerms'), style: const TextStyle(fontSize: 14)),
                     ),
                   ],
                 ),
                 const SizedBox(height: 24),
-                const Divider(color: OdjraColors.surfaceBorder),
+                const Divider(color: OjraColors.surfaceBorder),
                 const SizedBox(height: 16),
-                Text(L10n.instance.t('footerMade'), style: const TextStyle(color: OdjraColors.textSecondary, fontSize: 13)),
+                Text(L10n.instance.t('footerMade'), style: const TextStyle(color: OjraColors.textSecondary, fontSize: 13)),
                 const SizedBox(height: 6),
-                Text(L10n.instance.t('footerRights'), style: const TextStyle(color: OdjraColors.textMuted, fontSize: 12)),
+                Text(L10n.instance.t('footerRights'), style: const TextStyle(color: OjraColors.textMuted, fontSize: 12)),
               ],
             ),
           ),
@@ -309,9 +309,9 @@ class SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        t(context, titleKey, size: 32, weight: FontWeight.w800, color: OdjraColors.textPrimary, align: TextAlign.center),
+        t(context, titleKey, size: 32, weight: FontWeight.w800, color: OjraColors.textPrimary, align: TextAlign.center),
         const SizedBox(height: 12),
-        t(context, subtitleKey, size: 16, weight: FontWeight.w500, color: OdjraColors.textSecondary, align: TextAlign.center),
+        t(context, subtitleKey, size: 16, weight: FontWeight.w500, color: OjraColors.textSecondary, align: TextAlign.center),
       ],
     );
   }
@@ -420,7 +420,7 @@ class _CircuitPainter extends CustomPainter {
     canvas.drawRect(Offset.zero & size, bg);
 
     // Dot grid (puzzle board)
-    final dotPaint = Paint()..color = OdjraColors.trace.withValues(alpha: 0.6);
+    final dotPaint = Paint()..color = OjraColors.trace.withValues(alpha: 0.6);
     for (int i = 1; i < 8; i++) {
       for (int j = 1; j < 8; j++) {
         canvas.drawCircle(Offset(size.width * i / 8, size.height * j / 8), 1.6, dotPaint);
@@ -429,7 +429,7 @@ class _CircuitPainter extends CustomPainter {
 
     // Decorative traces
     final tracePaint = Paint()
-      ..color = OdjraColors.trace
+      ..color = OjraColors.trace
       ..strokeWidth = 2.2
       ..strokeCap = StrokeCap.round
       ..style = PaintingStyle.stroke;
@@ -440,7 +440,7 @@ class _CircuitPainter extends CustomPainter {
       }
       canvas.drawPath(p, tracePaint);
       for (final v in seg) {
-        canvas.drawCircle(Offset(v.dx * size.width, v.dy * size.height), 3.4, Paint()..color = OdjraColors.trace);
+        canvas.drawCircle(Offset(v.dx * size.width, v.dy * size.height), 3.4, Paint()..color = OjraColors.trace);
       }
     }
 
@@ -452,7 +452,7 @@ class _CircuitPainter extends CustomPainter {
     canvas.drawPath(
       loop,
       Paint()
-        ..color = OdjraColors.burgundy.withValues(alpha: 0.5)
+        ..color = OjraColors.burgundy.withValues(alpha: 0.5)
         ..style = PaintingStyle.stroke
         ..strokeWidth = 3
         ..strokeCap = StrokeCap.round,
@@ -460,7 +460,7 @@ class _CircuitPainter extends CustomPainter {
 
     // Waypoint pads
     for (final p in _loop) {
-      canvas.drawCircle(Offset(p.dx * size.width, p.dy * size.height), 3.2, Paint()..color = OdjraColors.traceBright);
+      canvas.drawCircle(Offset(p.dx * size.width, p.dy * size.height), 3.2, Paint()..color = OjraColors.traceBright);
     }
 
     final distance = metric.length * t;
@@ -469,9 +469,9 @@ class _CircuitPainter extends CustomPainter {
     // Electron
     if (tangent != null) {
       final pos = tangent.position;
-      canvas.drawCircle(pos, 16, Paint()..color = OdjraColors.amber.withValues(alpha: 0.22));
-      canvas.drawCircle(pos, 9, Paint()..color = OdjraColors.amber.withValues(alpha: 0.4));
-      canvas.drawCircle(pos, 5.5, Paint()..color = OdjraColors.amber);
+      canvas.drawCircle(pos, 16, Paint()..color = OjraColors.amber.withValues(alpha: 0.22));
+      canvas.drawCircle(pos, 9, Paint()..color = OjraColors.amber.withValues(alpha: 0.4));
+      canvas.drawCircle(pos, 5.5, Paint()..color = OjraColors.amber);
       canvas.drawCircle(pos, 2.2, Paint()..color = Colors.white);
     }
   }
@@ -496,9 +496,9 @@ class AppCard extends StatelessWidget {
       width: double.infinity,
       padding: const EdgeInsets.all(28),
       decoration: BoxDecoration(
-        color: OdjraColors.surface,
+        color: OjraColors.surface,
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: OdjraColors.surfaceBorder),
+        border: Border.all(color: OjraColors.surfaceBorder),
         boxShadow: [
           BoxShadow(color: Colors.black.withValues(alpha: 0.35), blurRadius: 30, offset: const Offset(0, 14)),
         ],
@@ -511,7 +511,7 @@ class AppCard extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(22),
               boxShadow: [
-                BoxShadow(color: OdjraColors.primary.withValues(alpha: 0.35), blurRadius: 20, offset: const Offset(0, 8)),
+                BoxShadow(color: OjraColors.primary.withValues(alpha: 0.35), blurRadius: 20, offset: const Offset(0, 8)),
               ],
             ),
             child: ClipRRect(
@@ -520,9 +520,9 @@ class AppCard extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 20),
-          t(context, nameKey, size: 20, weight: FontWeight.w800, color: OdjraColors.textPrimary, align: TextAlign.center),
+          t(context, nameKey, size: 20, weight: FontWeight.w800, color: OjraColors.textPrimary, align: TextAlign.center),
           const SizedBox(height: 8),
-          t(context, descKey, size: 14, weight: FontWeight.w500, color: OdjraColors.textSecondary, align: TextAlign.center),
+          t(context, descKey, size: 14, weight: FontWeight.w500, color: OjraColors.textSecondary, align: TextAlign.center),
           const SizedBox(height: 24),
           if (!isMobile) ...[
             Container(
@@ -541,9 +541,9 @@ class AppCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 14),
-            t(context, 'scanHint', size: 13, weight: FontWeight.w700, color: OdjraColors.primaryBright, align: TextAlign.center),
+            t(context, 'scanHint', size: 13, weight: FontWeight.w700, color: OjraColors.primaryBright, align: TextAlign.center),
           ] else ...[
-            t(context, 'phoneHint', size: 13, weight: FontWeight.w500, color: OdjraColors.textSecondary, align: TextAlign.center),
+            t(context, 'phoneHint', size: 13, weight: FontWeight.w500, color: OjraColors.textSecondary, align: TextAlign.center),
             const SizedBox(height: 14),
           ],
           const SizedBox(height: 8),
@@ -552,7 +552,7 @@ class AppCard extends StatelessWidget {
             child: FilledButton.icon(
               onPressed: () => openUrl(storeUrl),
               style: FilledButton.styleFrom(
-                backgroundColor: isDriver ? OdjraColors.burgundy : OdjraColors.primary,
+                backgroundColor: isDriver ? OjraColors.burgundy : OjraColors.primary,
               ),
               icon: const Icon(Icons.shopping_bag_rounded, size: 18),
               label: Text(L10n.instance.t('getOnGooglePlay'), style: const TextStyle(fontSize: 14)),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-/// Dark "night circuit" palette built from the Odjra rider app brand colors
+/// Dark "night circuit" palette built from the Ojra rider app brand colors
 /// (burgundy / magenta / amber) but tuned for a unique, non-template look.
-class OdjraColors {
-  OdjraColors._();
+class OjraColors {
+  OjraColors._();
 
   static const bg = Color(0xFF120810); // page background (near-black burgundy)
   static const bgElevated = Color(0xFF1A0C13);
@@ -40,36 +40,36 @@ class OdjraColors {
 
 ThemeData buildAppTheme() {
   final scheme = ColorScheme.fromSeed(
-    seedColor: OdjraColors.burgundy,
+    seedColor: OjraColors.burgundy,
     brightness: Brightness.dark,
-    primary: OdjraColors.primary,
-    secondary: OdjraColors.amber,
-    surface: OdjraColors.surface,
+    primary: OjraColors.primary,
+    secondary: OjraColors.amber,
+    surface: OjraColors.surface,
   );
 
   final base = ThemeData(
     useMaterial3: true,
     colorScheme: scheme,
-    scaffoldBackgroundColor: OdjraColors.bg,
-    canvasColor: OdjraColors.bg,
+    scaffoldBackgroundColor: OjraColors.bg,
+    canvasColor: OjraColors.bg,
   );
 
   final textTheme = GoogleFonts.cairoTextTheme(base.textTheme).apply(
-    bodyColor: OdjraColors.textPrimary,
-    displayColor: OdjraColors.textPrimary,
+    bodyColor: OjraColors.textPrimary,
+    displayColor: OjraColors.textPrimary,
   );
 
   return base.copyWith(
     textTheme: textTheme,
     appBarTheme: AppBarTheme(
-      backgroundColor: OdjraColors.bg,
-      foregroundColor: OdjraColors.textPrimary,
+      backgroundColor: OjraColors.bg,
+      foregroundColor: OjraColors.textPrimary,
       elevation: 0,
       surfaceTintColor: Colors.transparent,
     ),
     filledButtonTheme: FilledButtonThemeData(
       style: FilledButton.styleFrom(
-        backgroundColor: OdjraColors.primary,
+        backgroundColor: OjraColors.primary,
         foregroundColor: Colors.white,
         minimumSize: const Size(0, 52),
         padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 16),
@@ -79,18 +79,18 @@ ThemeData buildAppTheme() {
     ),
     outlinedButtonTheme: OutlinedButtonThemeData(
       style: OutlinedButton.styleFrom(
-        foregroundColor: OdjraColors.textPrimary,
+        foregroundColor: OjraColors.textPrimary,
         minimumSize: const Size(0, 52),
         padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-        side: const BorderSide(color: OdjraColors.surfaceBorder),
+        side: const BorderSide(color: OjraColors.surfaceBorder),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         textStyle: const TextStyle(fontWeight: FontWeight.w700),
       ),
     ),
-    dividerTheme: const DividerThemeData(color: OdjraColors.surfaceBorder, thickness: 1, space: 1),
-    iconTheme: const IconThemeData(color: OdjraColors.textPrimary),
+    dividerTheme: const DividerThemeData(color: OjraColors.surfaceBorder, thickness: 1, space: 1),
+    iconTheme: const IconThemeData(color: OjraColors.textPrimary),
     cardTheme: CardThemeData(
-      color: OdjraColors.surface,
+      color: OjraColors.surface,
       surfaceTintColor: Colors.transparent,
       elevation: 0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),

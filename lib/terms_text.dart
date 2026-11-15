@@ -1,10 +1,10 @@
 /// Terms & Conditions full text per locale (generated).
-/// Source: Odjra rider/driver app translation files.
+/// Source: Ojra rider/driver app translation files.
 const Map<String, String> termsByLocale = {
   'ar': r'''الشروط والأحكام
 تاريخ النفاذ: 11/07/2024
 
-مرحباً بكم في أجرة (Odjra) . تحكم هذه الشروط والأحكام ("الشروط") استخدامك لخدماتنا في مجال مشاركة الرحلات ("الخدمات") المقدمة من خلال تطبيقنا المحمول وموقعنا الإلكتروني (والتي يُشار إليها مجتمعة بـ "التطبيق"). باستخدامك لخدماتنا، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق على أي جزء من هذه الشروط، فلا يجوز لك استخدام خدماتنا.
+مرحباً بكم في أجرة (Ojra) . تحكم هذه الشروط والأحكام ("الشروط") استخدامك لخدماتنا في مجال مشاركة الرحلات ("الخدمات") المقدمة من خلال تطبيقنا المحمول وموقعنا الإلكتروني (والتي يُشار إليها مجتمعة بـ "التطبيق"). باستخدامك لخدماتنا، فإنك توافق على الالتزام بهذه الشروط. إذا كنت لا توافق على أي جزء من هذه الشروط، فلا يجوز لك استخدام خدماتنا.
 
 1 قبول الشروط
 
@@ -14,11 +14,11 @@ const Map<String, String> termsByLocale = {
 
  2.1 الخدمات المقدمة 
 
-توفر أجرة (Odjra) منصة مشاركة الرحلات التي تربط الركاب بالسائقين لتسهيل خدمات النقل. نحن لا نقدم أي خدمات إضافية تتجاوز مشاركة الرحلات، مثل توصيل الطرود أو تأجير المركبات.
+توفر أجرة (Ojra) منصة مشاركة الرحلات التي تربط الركاب بالسائقين لتسهيل خدمات النقل. نحن لا نقدم أي خدمات إضافية تتجاوز مشاركة الرحلات، مثل توصيل الطرود أو تأجير المركبات.
 
 2.2 العلاقة مع السائقين
 
- يعتبر السائقون متعاقدين مستقلين. لا توجد علاقة عمل بين أجرة (Odjra) والسائقين. السائقون مسؤولون بشكل كامل عن مركباتهم وصيانتها والامتثال لجميع القوانين واللوائح المعمول بها.
+ يعتبر السائقون متعاقدين مستقلين. لا توجد علاقة عمل بين أجرة (Ojra) والسائقين. السائقون مسؤولون بشكل كامل عن مركباتهم وصيانتها والامتثال لجميع القوانين واللوائح المعمول بها.
 
  3.1 متطلبات المستخدمين
 
@@ -62,11 +62,11 @@ const Map<String, String> termsByLocale = {
 
 7.1 إخلاءات المسؤولية وحدود المسؤولية 
 
- الحوادث أثناء الرحلات لا تتحمل أجرة (Odjra) المسؤولية عن أي حوادث تحدث أثناء الرحلة، بما في ذلك الحوادث والأضرار أو الإصابات، سواء كانت تتعلق بالركاب أو السائقين.
+ الحوادث أثناء الرحلات لا تتحمل أجرة (Ojra) المسؤولية عن أي حوادث تحدث أثناء الرحلة، بما في ذلك الحوادث والأضرار أو الإصابات، سواء كانت تتعلق بالركاب أو السائقين.
 
 7.2 حل النزاعات
 
- في حال نشوء نزاع بين الركاب والسائقين، يجب على المستخدمين التواصل مع فريق الدعم لدينا عبر البريد الإلكتروني على ayachine@odjra.com وتقديم الأدلة ذات الصلة لحل النزاع.
+ في حال نشوء نزاع بين الركاب والسائقين، يجب على المستخدمين التواصل مع فريق الدعم لدينا عبر البريد الإلكتروني على ojra@ojra-dz.com وتقديم الأدلة ذات الصلة لحل النزاع.
 
 7.3 عدم المسؤولية عن تصرفات الأطراف الثالثة
 
@@ -102,19 +102,19 @@ const Map<String, String> termsByLocale = {
 
 11.1 دعم العملاء وحل المشكلات 
 
- التعامل مع الشكاوى يجب تقديم جميع الشكاوى إلى فريق الدعم لدينا عبر البريد الإلكتروني على ayachine@odjra.com. يُرجى تقديم معلومات مفصلة والأدلة ذات الصلة لتسهيل حل سريع
+ التعامل مع الشكاوى يجب تقديم جميع الشكاوى إلى فريق الدعم لدينا عبر البريد الإلكتروني على ojra@ojra-dz.com. يُرجى تقديم معلومات مفصلة والأدلة ذات الصلة لتسهيل حل سريع
 
 12.1 الملكية الفكرية 
 
- الملكية جميع حقوق الملكية الفكرية في منصة أجرة (Odjra)، بما في ذلك على سبيل المثال لا الحصر، قواعد البيانات والاختراعات والبراءات وحقوق الطبع والنشر والعلامات التجارية وعلامات الخدمة، مملوكة حصريًا لأجرة (Odjra) أو المرخصين لها.
+ الملكية جميع حقوق الملكية الفكرية في منصة أجرة (Ojra)، بما في ذلك على سبيل المثال لا الحصر، قواعد البيانات والاختراعات والبراءات وحقوق الطبع والنشر والعلامات التجارية وعلامات الخدمة، مملوكة حصريًا لأجرة (Ojra) أو المرخصين لها.
 
 12.2 المساهمات من المستخدمين
 
- أي محتوى أو ملاحظات أو اقتراحات مقدمة من المستخدمين تصبح ملكية حصرية لأجرة (Odjra). من خلال تقديم هذا المحتوى، يمنح المستخدمون أجرة (Odjra) ترخيصًا غير مقيد وخاليًا من حقوق الملكية لاستخدام وتعديل وتوزيع المساهمات لأي غرض.
+ أي محتوى أو ملاحظات أو اقتراحات مقدمة من المستخدمين تصبح ملكية حصرية لأجرة (Ojra). من خلال تقديم هذا المحتوى، يمنح المستخدمون أجرة (Ojra) ترخيصًا غير مقيد وخاليًا من حقوق الملكية لاستخدام وتعديل وتوزيع المساهمات لأي غرض.
 
 12.3 استخدام العلامات التجارية
 
- لا يجوز للمستخدمين استخدام العلامات التجارية أو الشعارات أو علامات الخدمة الخاصة بأجرة (Odjra) بأي طريقة قد تسبب الارتباك أو توحي بالموافقة دون إذن كتابي صريح من أجرة(Odjra).
+ لا يجوز للمستخدمين استخدام العلامات التجارية أو الشعارات أو علامات الخدمة الخاصة بأجرة (Ojra) بأي طريقة قد تسبب الارتباك أو توحي بالموافقة دون إذن كتابي صريح من أجرة(Ojra).
 
 12.4 القانون الحاكم
 
@@ -128,23 +128,23 @@ const Map<String, String> termsByLocale = {
 
  إذا كان لديك أي أسئلة أو مخاوف بشأن هذه الشروط، يرجى الاتصال بنا على:
 
-البريد الإلكتروني: ayachine@odjra.com
+البريد الإلكتروني: ojra@ojra-dz.com
 
 العنوان:''',
   'fr': r'''Conditions Générales
 Date d'entrée en vigueur : 11/07/2024
 
-Bienvenue sur Odjra (أجرة) (« nous », « notre », « nos »). Les présentes Conditions Générales (« Conditions ») régissent l'utilisation de nos services de covoiturage (« Services ») fournis via notre application mobile et notre site web (collectivement, l'« Application »). En accédant à nos Services ou en les utilisant, vous acceptez d'être lié par ces Conditions. Si vous n'acceptez pas une partie de ces Conditions, vous ne devez pas utiliser nos Services.
+Bienvenue sur Ojra (أجرة) (« nous », « notre », « nos »). Les présentes Conditions Générales (« Conditions ») régissent l'utilisation de nos services de covoiturage (« Services ») fournis via notre application mobile et notre site web (collectivement, l'« Application »). En accédant à nos Services ou en les utilisant, vous acceptez d'être lié par ces Conditions. Si vous n'acceptez pas une partie de ces Conditions, vous ne devez pas utiliser nos Services.
 
 1. Acceptation des Conditions
 En vous inscrivant pour un compte et en utilisant nos Services, vous (« Utilisateur », « Passager » ou « Chauffeur ») acceptez de vous conformer à ces Conditions et d'être lié par celles-ci. Nous pouvons mettre à jour ces Conditions de temps en temps, et ces mises à jour prendront effet dès leur publication. Il est de votre responsabilité de consulter régulièrement ces Conditions.
 
 2. Étendue et limitations du service
 2.1 Services Fournis
-Odjra (أجرة) propose une plateforme de covoiturage qui met en relation des Passagers avec des Chauffeurs pour faciliter les services de transport. Nous ne fournissons aucun service supplémentaire au-delà du covoiturage, tel que la livraison de colis ou la location de véhicules.
+Ojra (أجرة) propose une plateforme de covoiturage qui met en relation des Passagers avec des Chauffeurs pour faciliter les services de transport. Nous ne fournissons aucun service supplémentaire au-delà du covoiturage, tel que la livraison de colis ou la location de véhicules.
 
 2.2 Relation avec les Chauffeurs
-Les Chauffeurs sont considérés comme des prestataires indépendants. Il n'existe aucune relation de travail entre Odjra (أجرة) et les Chauffeurs. Les Chauffeurs sont seuls responsables de leur véhicule, de son entretien et du respect de toutes les lois et réglementations applicables.
+Les Chauffeurs sont considérés comme des prestataires indépendants. Il n'existe aucune relation de travail entre Ojra (أجرة) et les Chauffeurs. Les Chauffeurs sont seuls responsables de leur véhicule, de son entretien et du respect de toutes les lois et réglementations applicables.
 
 3. Exigences pour les utilisateurs
 3.1 Admissibilité
@@ -180,10 +180,10 @@ Actuellement, notre application ne comprend pas de protocoles de sécurité spé
 
 7. Déclarations de non-responsabilité et limitations de responsabilité
 7.1 Incidents Pendant les Trajets
-Odjra (أجرة) n'est pas responsable des incidents survenant pendant un trajet, y compris les accidents, dommages ou blessures, impliquant les Passagers ou les Chauffeurs.
+Ojra (أجرة) n'est pas responsable des incidents survenant pendant un trajet, y compris les accidents, dommages ou blessures, impliquant les Passagers ou les Chauffeurs.
 
 7.2 Résolution des Conflits
-En cas de conflit entre Passagers et Chauffeurs, les utilisateurs doivent contacter notre équipe de support par email à l'adresse ayachine@odjra.com et fournir les preuves pertinentes pour une résolution.
+En cas de conflit entre Passagers et Chauffeurs, les utilisateurs doivent contacter notre équipe de support par email à l'adresse ojra@ojra-dz.com et fournir les preuves pertinentes pour une résolution.
 
 7.3 Absence de Responsabilité pour les Actions de Tiers
 Nous déclinons toute responsabilité pour les actions ou omissions des prestataires de services tiers ou des Chauffeurs.
@@ -213,17 +213,17 @@ Nous pouvons proposer des promotions ou réductions occasionnellement. Les condi
 
 11. Service Client et Résolution des Problèmes
 11.1 Gestion des Plaintes
-Toutes les plaintes doivent être soumises à notre équipe de support par email à l'adresse ayachine@odjra.com. Veuillez fournir des informations détaillées et des preuves pertinentes pour faciliter une résolution rapide.
+Toutes les plaintes doivent être soumises à notre équipe de support par email à l'adresse ojra@ojra-dz.com. Veuillez fournir des informations détaillées et des preuves pertinentes pour faciliter une résolution rapide.
 
 12. Propriété Intellectuelle
 12.1 Propriété
-Tous les droits de propriété intellectuelle de la plateforme Odjra (أجرة), y compris, mais sans s'y limiter, les bases de données, inventions, brevets, marques de commerce et de service, appartiennent exclusivement à Odjra (أجرة) ou à ses concédants.
+Tous les droits de propriété intellectuelle de la plateforme Ojra (أجرة), y compris, mais sans s'y limiter, les bases de données, inventions, brevets, marques de commerce et de service, appartiennent exclusivement à Ojra (أجرة) ou à ses concédants.
 
 12.2 Soumissions des Utilisateurs
-Tout contenu, retour ou suggestion fournis par les utilisateurs devient la propriété exclusive d'Odjra (أجرة). En soumettant un tel contenu, les utilisateurs accordent à Odjra (أجرة) une licence gratuite, illimitée et perpétuelle d'utiliser, de modifier et de distribuer les soumissions à toutes fins.
+Tout contenu, retour ou suggestion fournis par les utilisateurs devient la propriété exclusive d'Ojra (أجرة). En soumettant un tel contenu, les utilisateurs accordent à Ojra (أجرة) une licence gratuite, illimitée et perpétuelle d'utiliser, de modifier et de distribuer les soumissions à toutes fins.
 
 12.3 Utilisation des Marques de Commerce
-Les utilisateurs ne peuvent pas utiliser les marques de commerce, logos ou marques de service d'Odjra (أجرة) d'une manière susceptible de créer une confusion ou d'indiquer un soutien sans autorisation écrite explicite d'Odjra (أجرة).
+Les utilisateurs ne peuvent pas utiliser les marques de commerce, logos ou marques de service d'Ojra (أجرة) d'une manière susceptible de créer une confusion ou d'indiquer un soutien sans autorisation écrite explicite d'Ojra (أجرة).
 
 13. Droit Applicable
 Les présentes Conditions sont régies et interprétées conformément aux lois de [Votre Pays/État], sans tenir compte des principes de conflit de lois. Tout litige découlant de ou en rapport avec ces Conditions sera soumis à la juridiction exclusive des tribunaux situés dans [Votre Juridiction].
@@ -234,23 +234,23 @@ Nous nous réservons le droit de modifier ces Conditions à tout moment. Les Con
 15. Coordonnées
 Si vous avez des questions ou des préoccupations concernant ces Conditions, veuillez nous contacter à :
 
-Email : ayachine@odjra.com
+Email : ojra@ojra-dz.com
 
 Adresse : [Adresse de Votre Société]''',
   'en': r'''Terms and Conditions
 Effective Date: 11/07/2024
 
-Welcome to Odjra (أجرة) ("we," "our," "us"). These Terms and Conditions ("Terms") govern your use of our ridesharing services ("Services") provided through our mobile application and website (collectively, the "App"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use our Services.
+Welcome to Ojra (أجرة) ("we," "our," "us"). These Terms and Conditions ("Terms") govern your use of our ridesharing services ("Services") provided through our mobile application and website (collectively, the "App"). By accessing or using our Services, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you must not use our Services.
 
 1. Acceptance of Terms
 By registering for an account and using our Services, you ("User," "Rider," or "Driver") agree to comply with and be bound by these Terms. We may update these Terms from time to time, and such updates will be effective upon posting. It is your responsibility to review these Terms periodically.
 
 2. Service Scope and Limitations
 2.1 Services Provided
-Odjra (أجرة) offers a ridesharing platform that connects Riders with Drivers to facilitate transportation services. We do not provide any additional services beyond ridesharing, such as package delivery or vehicle rentals.
+Ojra (أجرة) offers a ridesharing platform that connects Riders with Drivers to facilitate transportation services. We do not provide any additional services beyond ridesharing, such as package delivery or vehicle rentals.
 
 2.2 Relationship with Drivers
-Drivers are considered independent contractors. There is no employment relationship between Odjra (أجرة) and Drivers. Drivers are solely responsible for their vehicle, maintenance, and compliance with all applicable laws and regulations.
+Drivers are considered independent contractors. There is no employment relationship between Ojra (أجرة) and Drivers. Drivers are solely responsible for their vehicle, maintenance, and compliance with all applicable laws and regulations.
 
 3. User Requirements
 3.1 Eligibility
@@ -285,10 +285,10 @@ Currently, our app does not include specific safety protocols such as in-app eme
 
 7. Disclaimers and Limitations of Liability
 7.1 Incidents During Rides
-Odjra (أجرة) is not responsible for any incidents occurring during a ride, including accidents, damages, or injuries, whether involving Riders or Drivers.
+Ojra (أجرة) is not responsible for any incidents occurring during a ride, including accidents, damages, or injuries, whether involving Riders or Drivers.
 
 7.2 Dispute Resolution
-In the event of a dispute between Riders and Drivers, Users must contact our support team via email at ayachine@odjra.com and provide relevant evidence for resolution.
+In the event of a dispute between Riders and Drivers, Users must contact our support team via email at ojra@ojra-dz.com and provide relevant evidence for resolution.
 
 7.3 No Liability for Third-Party Actions
 We do not hold liability for actions or omissions by third-party service providers or Drivers.
@@ -318,17 +318,17 @@ We may offer promotions or discounts from time to time. Terms and conditions for
 
 11. Customer Support and Issue Resolution
 11.1 Complaint Handling
-All complaints must be submitted to our support team via email at ayachine@odjra.com. Please provide detailed information and relevant evidence to facilitate prompt resolution.
+All complaints must be submitted to our support team via email at ojra@ojra-dz.com. Please provide detailed information and relevant evidence to facilitate prompt resolution.
 
 12. Intellectual Property
 12.1 Ownership
-All intellectual property rights in the Odjra (أجرة) platform, including but not limited to databases, inventions, patents, copyrights, trademarks, and service marks, are owned exclusively by Odjra (أجرة) or its licensors.
+All intellectual property rights in the Ojra (أجرة) platform, including but not limited to databases, inventions, patents, copyrights, trademarks, and service marks, are owned exclusively by Ojra (أجرة) or its licensors.
 
 12.2 User Submissions
-Any content, feedback, or suggestions provided by Users become the sole property of Odjra (أجرة). By submitting such content, Users grant Odjra (أجرة) an unrestricted, royalty-free license to use, modify, and distribute the submissions for any purpose.
+Any content, feedback, or suggestions provided by Users become the sole property of Ojra (أجرة). By submitting such content, Users grant Ojra (أجرة) an unrestricted, royalty-free license to use, modify, and distribute the submissions for any purpose.
 
 12.3 Trademark Use
-Users may not use Odjra (أجرة)'s trademarks, logos, or service marks in any manner that could cause confusion or imply endorsement without explicit, written permission from Odjra (أجرة).
+Users may not use Ojra (أجرة)'s trademarks, logos, or service marks in any manner that could cause confusion or imply endorsement without explicit, written permission from Ojra (أجرة).
 
 13. Governing Law
 These Terms are governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law principles. Any disputes arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts located in [Your Jurisdiction].
@@ -339,7 +339,7 @@ We reserve the right to modify these Terms at any time. Updated Terms will be ef
 15. Contact Information
 If you have any questions or concerns about these Terms, please contact us at:
 
-Email: ayachine@odjra.com
+Email: ojra@ojra-dz.com
 
 Address: [Your Company Address]''',
 };

@@ -27,7 +27,7 @@ jobs:
         run: flutter build web --release --base-href "/"
 
       - name: Preserve Custom Domain
-        run: echo "odjra.com" > build/web/CNAME
+        run: echo "ojra-dz.com" > build/web/CNAME
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3

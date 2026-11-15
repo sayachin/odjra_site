@@ -53,7 +53,7 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: OdjraColors.bg,
+      backgroundColor: OjraColors.bg,
       body: Column(
         children: [
           SiteNavbar(onNavigate: _navigate),
@@ -88,7 +88,7 @@ class _LandingPageState extends State<LandingPage> {
         gradient: RadialGradient(
           center: Alignment(-0.6, -0.6),
           radius: 1.3,
-          colors: [Color(0xFF2A0E1D), OdjraColors.bg],
+          colors: [Color(0xFF2A0E1D), OjraColors.bg],
         ),
       ),
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 56),
@@ -111,7 +111,7 @@ class _LandingPageState extends State<LandingPage> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: OdjraColors.surfaceBorder),
+              border: Border.all(color: OjraColors.surfaceBorder),
               boxShadow: [
                 BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 50, offset: const Offset(0, 24)),
               ],
@@ -133,7 +133,7 @@ class _LandingPageState extends State<LandingPage> {
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: OdjraColors.surfaceBorder),
+              border: Border.all(color: OjraColors.surfaceBorder),
               boxShadow: [
                 BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 36, offset: const Offset(0, 18)),
               ],
@@ -152,23 +152,23 @@ class _LandingPageState extends State<LandingPage> {
         Container(
           padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
           decoration: BoxDecoration(
-            color: OdjraColors.primary.withValues(alpha: 0.16),
+            color: OjraColors.primary.withValues(alpha: 0.16),
             borderRadius: BorderRadius.circular(30),
-            border: Border.all(color: OdjraColors.primary.withValues(alpha: 0.4)),
+            border: Border.all(color: OjraColors.primary.withValues(alpha: 0.4)),
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.bolt_rounded, size: 16, color: OdjraColors.amber),
+              const Icon(Icons.bolt_rounded, size: 16, color: OjraColors.amber),
               const SizedBox(width: 6),
-              t(context, 'heroBadge', size: 13, weight: FontWeight.w700, color: OdjraColors.primaryBright),
+              t(context, 'heroBadge', size: 13, weight: FontWeight.w700, color: OjraColors.primaryBright),
             ],
           ),
         ),
         const SizedBox(height: 22),
         GradientText(text: L10n.instance.t('heroTitle'), size: 48, weight: FontWeight.w900, height: 1.22),
         const SizedBox(height: 18),
-        t(context, 'heroSubtitle', size: 17, weight: FontWeight.w500, color: OdjraColors.textSecondary, height: 1.6),
+        t(context, 'heroSubtitle', size: 17, weight: FontWeight.w500, color: OjraColors.textSecondary, height: 1.6),
         const SizedBox(height: 32),
         Wrap(
           spacing: 14,
@@ -176,17 +176,17 @@ class _LandingPageState extends State<LandingPage> {
           children: [
             FilledButton.icon(
               onPressed: () => _navigate('download'),
-              style: FilledButton.styleFrom(backgroundColor: OdjraColors.amber, foregroundColor: Color(0xFF221000)),
+              style: FilledButton.styleFrom(backgroundColor: OjraColors.amber, foregroundColor: Color(0xFF221000)),
               icon: const Icon(Icons.download_rounded, size: 20),
               label: t(context, 'heroCtaRider', size: 15, weight: FontWeight.w800, color: const Color(0xFF221000)),
             ),
             OutlinedButton.icon(
               onPressed: () => _navigate('drivers'),
               style: OutlinedButton.styleFrom(
-                foregroundColor: OdjraColors.textPrimary,
-                side: const BorderSide(color: OdjraColors.surfaceBorder),
+                foregroundColor: OjraColors.textPrimary,
+                side: const BorderSide(color: OjraColors.surfaceBorder),
               ),
-              icon: const Icon(Icons.directions_car_rounded, size: 20, color: OdjraColors.primaryBright),
+              icon: const Icon(Icons.directions_car_rounded, size: 20, color: OjraColors.primaryBright),
               label: t(context, 'heroCtaDriver', size: 15, weight: FontWeight.w700),
             ),
           ],
@@ -201,8 +201,8 @@ class _LandingPageState extends State<LandingPage> {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: OdjraColors.bgElevated,
-        border: Border.symmetric(horizontal: BorderSide(color: OdjraColors.surfaceBorder)),
+        color: OjraColors.bgElevated,
+        border: Border.symmetric(horizontal: BorderSide(color: OjraColors.surfaceBorder)),
       ),
       padding: const EdgeInsets.symmetric(vertical: 22),
       child: Center(
@@ -219,9 +219,9 @@ class _LandingPageState extends State<LandingPage> {
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      const Icon(Icons.check_circle_rounded, size: 18, color: OdjraColors.amber),
+                      const Icon(Icons.check_circle_rounded, size: 18, color: OjraColors.amber),
                       const SizedBox(width: 8),
-                      t(context, stats[i], size: 15, weight: FontWeight.w700, color: OdjraColors.textSecondary),
+                      t(context, stats[i], size: 15, weight: FontWeight.w700, color: OjraColors.textSecondary),
                     ],
                   ),
                 ),
@@ -235,12 +235,12 @@ class _LandingPageState extends State<LandingPage> {
   // ---------------------------------------------------------------- WHY
   Widget _buildWhy({required Key key}) {
     final features = <(IconData, Color, String, String)>[
-      (Icons.receipt_long_rounded, OdjraColors.primary, 'featureFareTitle', 'featureFareDesc'),
-      (Icons.payments_rounded, OdjraColors.amber, 'featureCashTitle', 'featureCashDesc'),
-      (Icons.location_searching_rounded, OdjraColors.primaryBright, 'featureTrackTitle', 'featureTrackDesc'),
-      (Icons.access_time_filled_rounded, OdjraColors.burgundy, 'feature247Title', 'feature247Desc'),
-      (Icons.flag_rounded, OdjraColors.primary, 'featureLocalTitle', 'featureLocalDesc'),
-      (Icons.shield_rounded, OdjraColors.amber, 'featureSafetyTitle', 'featureSafetyDesc'),
+      (Icons.receipt_long_rounded, OjraColors.primary, 'featureFareTitle', 'featureFareDesc'),
+      (Icons.payments_rounded, OjraColors.amber, 'featureCashTitle', 'featureCashDesc'),
+      (Icons.location_searching_rounded, OjraColors.primaryBright, 'featureTrackTitle', 'featureTrackDesc'),
+      (Icons.access_time_filled_rounded, OjraColors.burgundy, 'feature247Title', 'feature247Desc'),
+      (Icons.flag_rounded, OjraColors.primary, 'featureLocalTitle', 'featureLocalDesc'),
+      (Icons.shield_rounded, OjraColors.amber, 'featureSafetyTitle', 'featureSafetyDesc'),
     ];
 
     return Container(
@@ -280,7 +280,7 @@ class _LandingPageState extends State<LandingPage> {
       width: double.infinity,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
-          colors: [Color(0xFF2A0E1D), OdjraColors.bgElevated],
+          colors: [Color(0xFF2A0E1D), OjraColors.bgElevated],
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
         ),
@@ -300,7 +300,7 @@ class _LandingPageState extends State<LandingPage> {
               FilledButton.icon(
                 onPressed: () => openUrl(driverStoreUrl),
                 style: FilledButton.styleFrom(
-                  backgroundColor: OdjraColors.amber,
+                  backgroundColor: OjraColors.amber,
                   foregroundColor: const Color(0xFF221000),
                   minimumSize: const Size(260, 56),
                 ),
@@ -337,20 +337,20 @@ class _LandingPageState extends State<LandingPage> {
                   Container(
                     padding: const EdgeInsets.all(28),
                     decoration: BoxDecoration(
-                      color: OdjraColors.surface,
+                      color: OjraColors.surface,
                       borderRadius: BorderRadius.circular(20),
-                      border: Border.all(color: OdjraColors.surfaceBorder),
+                      border: Border.all(color: OjraColors.surfaceBorder),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         _stepNumber(s.$1),
                         const SizedBox(height: 20),
-                        Icon(s.$2, size: 34, color: OdjraColors.primaryBright),
+                        Icon(s.$2, size: 34, color: OjraColors.primaryBright),
                         const SizedBox(height: 14),
-                        t(context, s.$3, size: 18, weight: FontWeight.w800, color: OdjraColors.textPrimary),
+                        t(context, s.$3, size: 18, weight: FontWeight.w800, color: OjraColors.textPrimary),
                         const SizedBox(height: 8),
-                        t(context, s.$4, size: 14, weight: FontWeight.w500, color: OdjraColors.textSecondary, height: 1.5),
+                        t(context, s.$4, size: 14, weight: FontWeight.w500, color: OjraColors.textSecondary, height: 1.5),
                       ],
                     ),
                   ),
@@ -430,9 +430,9 @@ class _LandingPageState extends State<LandingPage> {
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 24),
             decoration: BoxDecoration(
-              gradient: const LinearGradient(colors: [OdjraColors.burgundy, OdjraColors.primary]),
+              gradient: const LinearGradient(colors: [OjraColors.burgundy, OjraColors.primary]),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: OdjraColors.primary.withValues(alpha: 0.4)),
+              border: Border.all(color: OjraColors.primary.withValues(alpha: 0.4)),
             ),
             child: Row(
               children: [
@@ -443,7 +443,7 @@ class _LandingPageState extends State<LandingPage> {
                 ),
                 FilledButton(
                   onPressed: () => Navigator.of(context).pushNamed('/terms'),
-                  style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: OdjraColors.burgundy),
+                  style: FilledButton.styleFrom(backgroundColor: Colors.white, foregroundColor: OjraColors.burgundy),
                   child: const Icon(Icons.arrow_forward_rounded),
                 ),
               ],
@@ -477,11 +477,11 @@ class _LandingPageState extends State<LandingPage> {
       height: 44,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: OdjraColors.primary.withValues(alpha: 0.2),
+        color: OjraColors.primary.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: OdjraColors.primary.withValues(alpha: 0.4)),
+        border: Border.all(color: OjraColors.primary.withValues(alpha: 0.4)),
       ),
-      child: Text('$n', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: OdjraColors.primaryBright)),
+      child: Text('$n', style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: OjraColors.primaryBright)),
     );
   }
 }
@@ -498,9 +498,9 @@ class _FeatureCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(26),
       decoration: BoxDecoration(
-        color: OdjraColors.surface,
+        color: OjraColors.surface,
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: OdjraColors.surfaceBorder),
+        border: Border.all(color: OjraColors.surfaceBorder),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -516,9 +516,9 @@ class _FeatureCard extends StatelessWidget {
             child: Icon(icon, color: color, size: 28),
           ),
           const SizedBox(height: 18),
-          t(context, titleKey, size: 17, weight: FontWeight.w800, color: OdjraColors.textPrimary),
+          t(context, titleKey, size: 17, weight: FontWeight.w800, color: OjraColors.textPrimary),
           const SizedBox(height: 8),
-          t(context, descKey, size: 14, weight: FontWeight.w500, color: OdjraColors.textSecondary, height: 1.55),
+          t(context, descKey, size: 14, weight: FontWeight.w500, color: OjraColors.textSecondary, height: 1.55),
         ],
       ),
     );
@@ -536,18 +536,18 @@ class _DriverPoint extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(26),
       decoration: BoxDecoration(
-        color: OdjraColors.surface.withValues(alpha: 0.6),
+        color: OjraColors.surface.withValues(alpha: 0.6),
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: OdjraColors.surfaceBorder),
+        border: Border.all(color: OjraColors.surfaceBorder),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: OdjraColors.amber, size: 30),
+          Icon(icon, color: OjraColors.amber, size: 30),
           const SizedBox(height: 16),
-          t(context, titleKey, size: 17, weight: FontWeight.w800, color: OdjraColors.textPrimary),
+          t(context, titleKey, size: 17, weight: FontWeight.w800, color: OjraColors.textPrimary),
           const SizedBox(height: 8),
-          t(context, descKey, size: 14, weight: FontWeight.w500, color: OdjraColors.textSecondary, height: 1.55),
+          t(context, descKey, size: 14, weight: FontWeight.w500, color: OjraColors.textSecondary, height: 1.55),
         ],
       ),
     );

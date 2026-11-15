@@ -1,11 +1,11 @@
 {
-    "name": "Odjra",
-    "short_name": "Odjra",
+    "name": "Ojra",
+    "short_name": "Ojra",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#3E0622",
     "theme_color": "#880E4F",
-    "description": "Odjra — Algeria's rideshare. Fixed fares, cash payment and live tracking. Download the rider and driver apps.",
+    "description": "Ojra — Algeria's rideshare. Fixed fares, cash payment and live tracking. Download the rider and driver apps.",
     "orientation": "any",
     "prefer_related_applications": false,
     "icons": [

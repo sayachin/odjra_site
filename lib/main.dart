@@ -6,11 +6,11 @@ import 'terms_page.dart';
 import 'theme.dart';
 
 void main() {
-  runApp(const OdjraWebsite());
+  runApp(const OjraWebsite());
 }
 
-class OdjraWebsite extends StatelessWidget {
-  const OdjraWebsite({super.key});
+class OjraWebsite extends StatelessWidget {
+  const OjraWebsite({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class OdjraWebsite extends StatelessWidget {
           // changes, so every localized string updates immediately.
           key: ValueKey(locale),
           debugShowCheckedModeBanner: false,
-          title: 'Odjra',
+          title: 'Ojra',
           theme: buildAppTheme(),
           initialRoute: '/',
           routes: {

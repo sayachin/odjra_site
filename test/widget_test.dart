@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:odjra_website/l10n.dart';
+import 'package:ojra_website/l10n.dart';
 
 void main() {
   test('L10n defaults to Arabic (RTL)', () {

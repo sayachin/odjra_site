@@ -14,7 +14,7 @@ class TermsPage extends StatelessWidget {
     final termsText = l10n.terms;
 
     return Scaffold(
-      backgroundColor: OdjraColors.bg,
+      backgroundColor: OjraColors.bg,
       body: Column(
         children: [
           _buildHeader(context),
@@ -27,19 +27,19 @@ class TermsPage extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      t(context, 'termsTitle', size: 34, weight: FontWeight.w800, color: OdjraColors.textPrimary),
+                      t(context, 'termsTitle', size: 34, weight: FontWeight.w800, color: OjraColors.textPrimary),
                       const SizedBox(height: 8),
-                      t(context, 'termsUpdated', size: 14, weight: FontWeight.w500, color: OdjraColors.textMuted),
+                      t(context, 'termsUpdated', size: 14, weight: FontWeight.w500, color: OjraColors.textMuted),
                       const SizedBox(height: 28),
                       if (showNotice) ...[
                         Container(
                           padding: const EdgeInsets.all(18),
                           decoration: BoxDecoration(
-                            color: OdjraColors.amber.withValues(alpha: 0.12),
+                            color: OjraColors.amber.withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(16),
-                            border: Border.all(color: OdjraColors.amber.withValues(alpha: 0.4)),
+                            border: Border.all(color: OjraColors.amber.withValues(alpha: 0.4)),
                           ),
-                          child: t(context, 'tzmTermsNotice', size: 15, weight: FontWeight.w600, height: 1.6, color: OdjraColors.amberSoft),
+                          child: t(context, 'tzmTermsNotice', size: 15, weight: FontWeight.w600, height: 1.6, color: OjraColors.amberSoft),
                         ),
                         const SizedBox(height: 24),
                       ],
@@ -47,9 +47,9 @@ class TermsPage extends StatelessWidget {
                         width: double.infinity,
                         padding: const EdgeInsets.all(32),
                         decoration: BoxDecoration(
-                          color: OdjraColors.surface,
+                          color: OjraColors.surface,
                           borderRadius: BorderRadius.circular(20),
-                          border: Border.all(color: OdjraColors.surfaceBorder),
+                          border: Border.all(color: OjraColors.surfaceBorder),
                         ),
                         child: Text(
                           termsText,
@@ -57,7 +57,7 @@ class TermsPage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 15,
                             height: 1.8,
-                            color: OdjraColors.textSecondary,
+                            color: OjraColors.textSecondary,
                           ),
                         ),
                       ),
@@ -77,8 +77,8 @@ class TermsPage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       decoration: const BoxDecoration(
-        color: OdjraColors.bg,
-        border: Border(bottom: BorderSide(color: OdjraColors.surfaceBorder)),
+        color: OjraColors.bg,
+        border: Border(bottom: BorderSide(color: OjraColors.surfaceBorder)),
       ),
       child: SafeArea(
         bottom: false,
@@ -89,10 +89,10 @@ class TermsPage extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: () => Navigator.of(context).pop(),
-                  icon: const Icon(Icons.arrow_back_rounded, color: OdjraColors.textPrimary),
+                  icon: const Icon(Icons.arrow_back_rounded, color: OjraColors.textPrimary),
                 ),
                 const SizedBox(width: 4),
-                const OdjraLogo(),
+                const OjraLogo(),
                 const Spacer(),
                 const LanguageSwitcher(),
               ],
