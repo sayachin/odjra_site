@@ -18,8 +18,32 @@
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="Ojra — Algeria's rideshare. Fixed fares, cash payment and live tracking. Download the rider and driver apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Ojra (أجرة) — Algeria's Rideshare | Rider &amp; Driver Apps</title>
+  <meta name="description" content="Ojra (أجرة) is Algeria's rideshare app. Fixed fares, cash payment and live ride tracking. Download the Ojra rider and driver apps from Google Play. أجرة — خدمة التنقّل الجزائرية.">
+  <meta name="keywords" content="Ojra, أجرة, rideshare Algeria, taxi app Algeria, VTC Algérie, Ojra rider, Ojra driver, transport Algérie, covoiturage Algérie">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Ojra">
+  <link rel="canonical" href="https://ojra-dz.com/">
   <meta name="theme-color" content="#880E4F">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ojra — أجرة">
+  <meta property="og:title" content="Ojra (أجرة) — Algeria's Rideshare">
+  <meta property="og:description" content="Fixed fares, cash payment and live tracking. Download the Ojra rider and driver apps from Google Play.">
+  <meta property="og:url" content="https://ojra-dz.com/">
+  <meta property="og:image" content="https://ojra-dz.com/icons/Icon-512.png">
+  <meta property="og:locale" content="ar_DZ">
+  <meta property="og:locale:alternate" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ojra (أجرة) — Algeria's Rideshare">
+  <meta name="twitter:description" content="Fixed fares, cash payment and live tracking. Download the Ojra rider and driver apps from Google Play.">
+  <meta name="twitter:image" content="https://ojra-dz.com/icons/Icon-512.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="mobile-web-app-capable" content="yes">
@@ -29,11 +53,311 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>Ojra — Algeria's rideshare</title>
   <link rel="manifest" href="manifest.json">
+
+  <!-- Structured data (rich results for Google). -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ojra-dz.com/#organization",
+        "name": "Ojra",
+        "alternateName": "أجرة",
+        "url": "https://ojra-dz.com/",
+        "email": "ojra@ojra-dz.com",
+        "description": "Ojra (أجرة) is Algeria's rideshare platform. Fixed fares, cash payment and live tracking.",
+        "areaServed": "Algeria",
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.ojra.rider",
+          "https://play.google.com/store/apps/details?id=com.ojra.driver"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ojra-dz.com/#website",
+        "url": "https://ojra-dz.com/",
+        "name": "Ojra — Algeria's rideshare",
+        "inLanguage": ["ar", "fr", "en"],
+        "publisher": { "@id": "https://ojra-dz.com/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Ojra — Rider",
+        "alternateName": "أجرة — زبون",
+        "operatingSystem": "Android",
+        "applicationCategory": "TravelApplication",
+        "url": "https://play.google.com/store/apps/details?id=com.ojra.rider",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DZD" },
+        "publisher": { "@id": "https://ojra-dz.com/#organization" }
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "Ojra — Driver",
+        "alternateName": "أجرة — سائق",
+        "operatingSystem": "Android",
+        "applicationCategory": "TravelApplication",
+        "url": "https://play.google.com/store/apps/details?id=com.ojra.driver",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "DZD" },
+        "publisher": { "@id": "https://ojra-dz.com/#organization" }
+      }
+    ]
+  }
+  </script>
+
+  <!--
+    Styling for the pre-rendered landing page. This is replaced by the Flutter
+    app once it initializes (see flutter_bootstrap.js).
+  -->
+  <style>
+    html, body { margin: 0; padding: 0; }
+
+    #prerender {
+      --bg: #120810;
+      --surface: #211019;
+      --border: #3A1D2E;
+      --magenta: #D81B60;
+      --magenta-bright: #F06292;
+      --amber: #FFB300;
+      --text: #F7EFF3;
+      --text-secondary: #C9A6B8;
+      --text-muted: #8A6678;
+
+      background:
+        radial-gradient(1100px 560px at 18% -12%, #2A0E1D 0%, var(--bg) 58%),
+        var(--bg);
+      color: var(--text);
+      font-family: 'Cairo', 'Segoe UI', Tahoma, 'Noto Sans Arabic', 'Noto Naskh Arabic', sans-serif;
+      line-height: 1.65;
+      min-height: 100vh;
+      transition: opacity .35s ease;
+    }
+    #prerender.prerender--hidden { opacity: 0; pointer-events: none; }
+    #prerender * { box-sizing: border-box; }
+    #prerender a { color: var(--magenta-bright); text-decoration: none; }
+    #prerender a:hover { text-decoration: underline; }
+    #prerender .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+    #prerender .latin { font-family: 'Segoe UI', Tahoma, Arial, sans-serif; }
+
+    /* Header */
+    #prerender .ojra-topbar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(18, 8, 16, .85);
+    }
+    #prerender .bar { display: flex; align-items: center; padding: 14px 24px; }
+    #prerender .ojra-logo { display: flex; align-items: center; gap: 10px; font-weight: 900; letter-spacing: 1.6px; }
+    #prerender .ojra-logo img { width: 44px; height: 44px; border-radius: 50%; }
+    #prerender .ojra-logo .ar { color: var(--text-secondary); font-weight: 700; letter-spacing: 0; }
+
+    /* Hero */
+    #prerender .hero { padding: 64px 0 40px; }
+    #prerender .badge {
+      display: inline-block; padding: 8px 16px; border-radius: 999px;
+      border: 1px solid rgba(216, 27, 96, .4); background: rgba(216, 27, 96, .16);
+      color: var(--magenta-bright); font-size: 13px; font-weight: 700;
+    }
+    #prerender h1 { font-size: 46px; font-weight: 900; margin: 22px 0 6px; line-height: 1.2; }
+    #prerender h1 .latin { color: var(--magenta-bright); }
+    #prerender .tagline { font-size: 18px; color: var(--amber); font-weight: 700; margin: 0 0 16px; }
+    #prerender .desc { font-size: 17px; color: var(--text-secondary); max-width: 760px; margin: 0 0 28px; }
+
+    /* Buttons */
+    #prerender .cta { display: flex; flex-wrap: wrap; gap: 14px; }
+    #prerender .btn {
+      display: inline-block; padding: 14px 24px; border-radius: 14px; font-weight: 800; font-size: 15px;
+      text-decoration: none !important; border: 1px solid transparent; text-align: center;
+    }
+    #prerender .btn-amber { background: var(--amber); color: #221000; }
+    #prerender .btn-outline { border-color: var(--border); color: var(--text); }
+    #prerender .btn-outline:hover { border-color: var(--magenta); }
+
+    /* Sections */
+    #prerender section { padding: 40px 0; }
+    #prerender h2 { font-size: 28px; font-weight: 800; margin: 0 0 8px; }
+    #prerender h2 .en { display: block; font-size: 15px; font-weight: 600; color: var(--text-muted); }
+    #prerender .sub { color: var(--text-secondary); margin: 0 0 28px; }
+
+    /* Feature grid */
+    #prerender .grid {
+      list-style: none; margin: 0; padding: 0; display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;
+    }
+    #prerender .grid li {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 26px;
+    }
+    #prerender .grid h3 { margin: 0 0 8px; font-size: 17px; }
+    #prerender .grid p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+
+    /* Steps */
+    #prerender .steps { list-style: none; margin: 0; padding: 0; display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; counter-reset: step; }
+    #prerender .steps li {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 26px; position: relative;
+    }
+    #prerender .steps .num {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 14px; margin-bottom: 14px;
+      background: rgba(216, 27, 96, .2); border: 1px solid rgba(216, 27, 96, .4);
+      color: var(--magenta-bright); font-weight: 800; font-size: 20px;
+    }
+    #prerender .steps h3 { margin: 0 0 8px; font-size: 18px; }
+    #prerender .steps p { margin: 0; color: var(--text-secondary); font-size: 14px; }
+
+    /* App cards */
+    #prerender .apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    #prerender .app {
+      display: block; background: var(--surface); border: 1px solid var(--border);
+      border-radius: 24px; padding: 28px; color: var(--text) !important; text-decoration: none !important;
+    }
+    #prerender .app:hover { border-color: var(--magenta); }
+    #prerender .app img { width: 96px; height: 96px; border-radius: 22px; display: block; margin-bottom: 16px; }
+    #prerender .app h3 { margin: 0 0 8px; font-size: 20px; }
+    #prerender .app p { margin: 0 0 20px; color: var(--text-secondary); font-size: 14px; }
+    #prerender .app .go { color: var(--magenta-bright); font-weight: 800; font-size: 14px; }
+
+    /* Contact */
+    #prerender .contact { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 24px 28px; }
+    #prerender .contact a { font-weight: 700; font-size: 18px; }
+
+    /* Footer */
+    #prerender footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: var(--text-muted); font-size: 13px; }
+    #prerender footer .tag { color: var(--text-secondary); font-size: 15px; }
+  </style>
 </head>
 <body>
+  <!--
+    Meaningful landing content rendered before Flutter initializes, so search
+    engines (and users on slow connections) see real content immediately.
+    flutter_bootstrap.js removes this element once the Flutter app is running.
+  -->
+  <div id="prerender">
+    <header class="ojra-topbar">
+      <div class="wrap bar">
+        <span class="ojra-logo">
+          <img src="favicon.png" alt="Ojra logo" width="44" height="44">
+          <span class="latin">OJRA</span>
+          <span class="ar">أجرة</span>
+        </span>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- Hero -->
+      <section class="hero">
+        <p class="badge">خدمة التنقّل الجزائرية · Algeria's rideshare</p>
+        <h1><span class="latin">Ojra</span> — أجرة</h1>
+        <p class="tagline">مشوارك… بلمسة واحدة · Your ride, one tap away</p>
+        <p class="desc">
+          أجرة (Ojra) هو تطبيق جزائري لمشاركة الرحلات يربط الركّاب بالسائقين.
+          أسعار ثابتة ومعلنة قبل الطلب، دفع نقدي بسيط، وتتبّع مباشر لرحلتك على
+          الخريطة — متاح على مدار الساعة في كل أنحاء الجزائر.
+          <br><br>
+          <span class="latin">Ojra (أجرة) is Algeria's rideshare app connecting riders
+          with drivers. Fixed, upfront fares, simple cash payment and live ride
+          tracking — available 24/7 across Algeria.</span>
+        </p>
+        <div class="cta">
+          <a class="btn btn-amber" href="https://play.google.com/store/apps/details?id=com.ojra.rider">حمّل تطبيق الراكب · Get the rider app</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.ojra.driver">كن سائقاً · Become a driver</a>
+        </div>
+      </section>
+
+      <!-- Why riders trust us -->
+      <section>
+        <h2>لماذا يثق بنا الزبائن؟<span class="en latin">Why riders trust us</span></h2>
+        <p class="sub">صمّمنا أجرة ليكون بسيطاً وموثوقاً ومحلياً.</p>
+        <ul class="grid">
+          <li>
+            <h3>سعر ثابت ومعلن</h3>
+            <p>اعرف ثمن مشوارك قبل أن تطلب الرحلة. لا مفاجآت. — <span class="latin">Fixed, upfront fares.</span></p>
+          </li>
+          <li>
+            <h3>الدفع نقداً</h3>
+            <p>لا حاجة لبطاقة بنكية. ادفع كما تفضّل. — <span class="latin">Pay in cash.</span></p>
+          </li>
+          <li>
+            <h3>تتبّع مباشر</h3>
+            <p>تابع سائقك على الخريطة لحظة بلحظة. — <span class="latin">Live tracking.</span></p>
+          </li>
+          <li>
+            <h3>متاح 24/7</h3>
+            <p>رحلة متاحة في أي وقت، نهاراً وليلاً. — <span class="latin">Available 24/7.</span></p>
+          </li>
+          <li>
+            <h3>شركة جزائرية</h3>
+            <p>فريق محلي يفهم مدنكم وطرقكم. — <span class="latin">A local Algerian company.</span></p>
+          </li>
+          <li>
+            <h3>أمانك أولاً</h3>
+            <p>قواعد سلوك واضحة وفريق دعم متاح. — <span class="latin">Safety first.</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- How it works -->
+      <section>
+        <h2>كيف يعمل؟<span class="en latin">How it works</span></h2>
+        <p class="sub">ثلاث خطوات بسيطة تفصلك عن وجهتك.</p>
+        <ol class="steps">
+          <li>
+            <span class="num">1</span>
+            <h3>اطلب مشوارك</h3>
+            <p>حدّد موقعك ووجهتك. — <span class="latin">Set your pickup and destination.</span></p>
+          </li>
+          <li>
+            <span class="num">2</span>
+            <h3>تتبّع السائق</h3>
+            <p>شاهد وصول سائقك مباشرة. — <span class="latin">Watch your driver arrive live.</span></p>
+          </li>
+          <li>
+            <span class="num">3</span>
+            <h3>ادفع نقداً</h3>
+            <p>ادفع عند الوصول بكل سهولة. — <span class="latin">Pay on arrival, the easy way.</span></p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Download -->
+      <section>
+        <h2>حمّل التطبيقات<span class="en latin">Download the apps</span></h2>
+        <p class="sub">اختر نسختك: راكب أو سائق. — <span class="latin">Pick your version: rider or driver.</span></p>
+        <div class="apps">
+          <a class="app" href="https://play.google.com/store/apps/details?id=com.ojra.rider">
+            <img src="favicon.png" alt="Ojra rider app icon" width="96" height="96">
+            <h3>أجرة — راكب <span class="latin">Ojra — Rider</span></h3>
+            <p>للمستخدمين الذين يريدون التنقّل بسهولة. — <span class="latin">For riders who want to get around easily.</span></p>
+            <span class="go latin">Get it on Google Play →</span>
+          </a>
+          <a class="app" href="https://play.google.com/store/apps/details?id=com.ojra.driver">
+            <img src="favicon.png" alt="Ojra driver app icon" width="96" height="96">
+            <h3>أجرة — سائق <span class="latin">Ojra — Driver</span></h3>
+            <p>للسائقين المستقلّين الذين يريدون دخلاً مرناً. — <span class="latin">For independent drivers who want flexible income.</span></p>
+            <span class="go latin">Get it on Google Play →</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section>
+        <h2>تواصل معنا<span class="en latin">Contact</span></h2>
+        <div class="contact">
+          <p class="sub">فريق الدعم يردّ بالعربية والفرنسية والإنجليزية. — <span class="latin">Our support team answers in Arabic, French and English.</span></p>
+          <a href="mailto:ojra@ojra-dz.com" class="latin">ojra@ojra-dz.com</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p class="tag">أجرة — نقل بسيط وموثوق في الجزائر · <span class="latin">Ojra — simple, reliable transport in Algeria.</span></p>
+        <p>© 2026 أجرة (Ojra). جميع الحقوق محفوظة · <span class="latin">All rights reserved.</span></p>
+      </div>
+    </footer>
+  </div>
+
   <!--
     You can customize the "flutter_bootstrap.js" script.
     This is useful to provide a custom configuration to the Flutter loader
