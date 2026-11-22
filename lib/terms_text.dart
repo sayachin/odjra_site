@@ -236,7 +236,7 @@ Si vous avez des questions ou des préoccupations concernant ces Conditions, veu
 
 Email : ojra@ojra-dz.com
 
-Adresse : [Adresse de Votre Société]''',
+Adresse : ''',
   'en': r'''Terms and Conditions
 Effective Date: 11/07/2024
 
@@ -341,5 +341,5 @@ If you have any questions or concerns about these Terms, please contact us at:
 
 Email: ojra@ojra-dz.com
 
-Address: [Your Company Address]''',
+Address: ''',
 };
