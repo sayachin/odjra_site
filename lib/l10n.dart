@@ -111,6 +111,18 @@ final Map<String, Map<String, String>> _strings = {
     'en': 'Ojra is built to be simple, reliable and local.',
     'tzm': 'ⵓⴷⵊⵔⴰ ⵢⴻⵙⵏⴼⴰⵍ ⴰⴷ ⵢⵉⵍⵉ ⴼⵙⵓⵙ, ⵢⵓⵎⵏ ⴷ ⴰⴷⵖⴰⵔⴰⵏ.',
   },
+  'featurePrivacyTitle': {
+    'ar': 'مكالمات خاصة بدون مشاركة الرقم',
+    'fr': 'Appels privés, sans partage de numéro',
+    'en': 'Private calls, no number sharing',
+    'tzm': 'ⵜⵉⵖⵔⵉⵡⵏ ⵜⵉⴷⵓⵙⵏⵉⵏ, ⵡⴰⵔ ⴰⴱⴹⵓ ⵏ ⵓⵟⵟⵓⵏ',
+  },
+  'featurePrivacyDesc': {
+    'ar': 'يتحدث الركاب والسائقون عبر مكالمات آمنة داخل التطبيق. أرقام الهواتف لا تتم مشاركتها أبداً.',
+    'fr': 'Passagers et chauffeurs se parlent par appels sécurisés dans l’application. Les numéros ne sont jamais partagés.',
+    'en': 'Riders and drivers talk through secure in-app VoIP calls. Phone numbers are never shared.',
+    'tzm': 'ⵉⵎⵓⴷⴰⵔ ⴷ ⵉⵎⵙⴻⴱⵔⵉⴷⴻⵏ ⵙⴰⵡⴰⵍⴻⵏ ⵙ ⵜⵉⵖⵔⵉⵡⵏ ⵉⴷⵓⵙⵏⵉⵏ ⴳ ⵓⵙⴻⵏⴼⴰⵔ. ⵓⵟⵟⵓⵏⴻⵏ ⵏ ⵜⴼⴰⵙⵏⵉⵡⵉⵏ ⵓⵔ ⵜⵜⴱⴹⴰⵏ ⴰⵔⴰ.',
+  },
   'featureFareTitle': {'ar': 'سعر ثابت ومعلن', 'fr': 'Tarif fixe et transparent', 'en': 'Fixed, upfront fares', 'tzm': 'ⴰⵜⵉⴳ ⵢⵓⵎⵏ'},
   'featureFareDesc': {
     'ar': 'اعرف ثمن مشوارك قبل أن تطلب الرحلة. لا مفاجآت.',

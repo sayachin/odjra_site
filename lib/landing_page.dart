@@ -197,7 +197,7 @@ class _LandingPageState extends State<LandingPage> {
 
   // ---------------------------------------------------------------- STATS
   Widget _buildStats() {
-    final stats = ['featureFareTitle', 'featureCashTitle', 'feature247Title', 'featureLocalTitle'];
+    final stats = ['featurePrivacyTitle', 'featureFareTitle', 'featureCashTitle', 'feature247Title', 'featureLocalTitle'];
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
@@ -235,6 +235,7 @@ class _LandingPageState extends State<LandingPage> {
   // ---------------------------------------------------------------- WHY
   Widget _buildWhy({required Key key}) {
     final features = <(IconData, Color, String, String)>[
+      (Icons.phone_locked_rounded, OjraColors.primaryBright, 'featurePrivacyTitle', 'featurePrivacyDesc'),
       (Icons.receipt_long_rounded, OjraColors.primary, 'featureFareTitle', 'featureFareDesc'),
       (Icons.payments_rounded, OjraColors.amber, 'featureCashTitle', 'featureCashDesc'),
       (Icons.location_searching_rounded, OjraColors.primaryBright, 'featureTrackTitle', 'featureTrackDesc'),
