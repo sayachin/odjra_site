@@ -106,19 +106,7 @@ class _LandingPageState extends State<LandingPage> {
       children: [
         Expanded(flex: 6, child: _heroCopy()),
         const SizedBox(width: 48),
-        Expanded(
-          flex: 5,
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: OjraColors.surfaceBorder),
-              boxShadow: [
-                BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 50, offset: const Offset(0, 24)),
-              ],
-            ),
-            child: const CircuitPuzzle(),
-          ),
-        ),
+        const Expanded(flex: 5, child: CircuitPuzzle()),
       ],
     );
   }
@@ -130,16 +118,7 @@ class _LandingPageState extends State<LandingPage> {
         const SizedBox(height: 40),
         ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 420),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              border: Border.all(color: OjraColors.surfaceBorder),
-              boxShadow: [
-                BoxShadow(color: Colors.black.withValues(alpha: 0.5), blurRadius: 36, offset: const Offset(0, 18)),
-              ],
-            ),
-            child: const CircuitPuzzle(),
-          ),
+          child: const CircuitPuzzle(),
         ),
       ],
     );

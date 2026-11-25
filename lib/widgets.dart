@@ -317,9 +317,12 @@ class SectionHeader extends StatelessWidget {
   }
 }
 
-/// Animated "electron in a circuit puzzle": a glowing particle travels a
-/// closed circuit loop, leaving an exact comet trail. One controller, one
-/// isolated repaint layer — very lightweight.
+bool _reduceMotion(BuildContext context) {
+  return MediaQuery.maybeDisableAnimationsOf(context) ?? false;
+}
+
+/// Animated hero stage: satellite night map, animated route, and Ojra-branded
+/// overlay cards. Ported from New Age Factories hero, recolored to Ojra palette.
 class CircuitPuzzle extends StatefulWidget {
   const CircuitPuzzle({super.key});
 
@@ -327,11 +330,318 @@ class CircuitPuzzle extends StatefulWidget {
   State<CircuitPuzzle> createState() => _CircuitPuzzleState();
 }
 
-class _CircuitPuzzleState extends State<CircuitPuzzle> with SingleTickerProviderStateMixin {
-  late final AnimationController _controller = AnimationController(
-    vsync: this,
-    duration: const Duration(seconds: 11),
-  )..repeat();
+class _CircuitPuzzleState extends State<CircuitPuzzle>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _routeController;
+  double _rotateX = 0;
+  double _rotateY = 0;
+  Duration _tiltDuration = const Duration(milliseconds: 240);
+
+  @override
+  void initState() {
+    super.initState();
+    _routeController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 8),
+    )..repeat();
+  }
+
+  @override
+  void dispose() {
+    _routeController.dispose();
+    super.dispose();
+  }
+
+  void _onHover(PointerEvent event) {
+    final box = context.findRenderObject();
+    if (box is! RenderBox) return;
+    final nx = (event.localPosition.dx / box.size.width - 0.5).clamp(-0.5, 0.5);
+    final ny = (event.localPosition.dy / box.size.height - 0.5).clamp(-0.5, 0.5);
+    setState(() {
+      _rotateX = -ny * 0.035;
+      _rotateY = nx * 0.045;
+      _tiltDuration = const Duration(milliseconds: 120);
+    });
+  }
+
+  void _onExit(PointerEvent event) {
+    setState(() {
+      _rotateX = 0;
+      _rotateY = 0;
+      _tiltDuration = const Duration(milliseconds: 450);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final width = constraints.maxWidth;
+        final scale = (width / 540).clamp(0.72, 1.0);
+        final height = (width * 1.02).clamp(360.0, 540.0);
+        final wide = width >= 420;
+        return MouseRegion(
+          onHover: _onHover,
+          onExit: _onExit,
+          child: AnimatedContainer(
+            duration: _tiltDuration,
+            curve: Curves.easeOutCubic,
+            height: height,
+            transformAlignment: Alignment.center,
+            transform: Matrix4.identity()
+              ..setEntry(3, 2, 0.0011)
+              ..rotateX(_rotateX)
+              ..rotateY(_rotateY),
+            child: Stack(
+              clipBehavior: Clip.none,
+              children: [
+                Positioned(
+                  top: 10,
+                  right: -24,
+                  child: IgnorePointer(
+                    child: Container(
+                      width: 260 * scale,
+                      height: 260 * scale,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        gradient: RadialGradient(
+                          colors: [
+                            OjraColors.primary.withValues(alpha: 0.22),
+                            OjraColors.amber.withValues(alpha: 0.08),
+                            Colors.transparent,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned.fill(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(27),
+                      border: Border.all(color: OjraColors.surfaceBorder),
+                      gradient: const LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [Color(0xFF2A101D), Color(0xFF140910)],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.black.withValues(alpha: 0.5),
+                          blurRadius: 80,
+                          spreadRadius: -20,
+                          offset: const Offset(0, 35),
+                        ),
+                        BoxShadow(
+                          color: OjraColors.primary.withValues(alpha: 0.10),
+                          blurRadius: 70,
+                          spreadRadius: -10,
+                        ),
+                      ],
+                    ),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(26),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Image.asset(
+                            'assets/images/hero_earth.jpg',
+                            fit: BoxFit.cover,
+                            semanticLabel: 'Satellite view of illuminated cities at night',
+                          ),
+                          const DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topLeft,
+                                end: Alignment.bottomRight,
+                                colors: [
+                                  Color(0x22120810),
+                                  Color(0x99120810),
+                                  Color(0xF2120810),
+                                ],
+                                stops: [0, 0.55, 1],
+                              ),
+                            ),
+                          ),
+                          DecoratedBox(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [
+                                  OjraColors.primaryBright.withValues(alpha: 0.14),
+                                  Colors.transparent,
+                                  OjraColors.burgundy.withValues(alpha: 0.20),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned.fill(
+                            child: IgnorePointer(
+                              child: CustomPaint(
+                                painter: _RoutePainter(progress: _routeController),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 18,
+                            left: 18,
+                            child: _GlassPill(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Container(
+                                    width: 5,
+                                    height: 5,
+                                    decoration: BoxDecoration(
+                                      color: OjraColors.amber,
+                                      shape: BoxShape.circle,
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: OjraColors.amber.withValues(alpha: 0.7),
+                                          blurRadius: 7,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(width: 7),
+                                  Text(
+                                    'LIVE NETWORK',
+                                    style: TextStyle(
+                                      fontSize: 7.8,
+                                      fontWeight: FontWeight.w700,
+                                      color: OjraColors.textPrimary.withValues(alpha: 0.9),
+                                      letterSpacing: 1.4,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            top: 21,
+                            right: 20,
+                            child: Text(
+                              'OJRA / LIVE',
+                              style: TextStyle(
+                                fontSize: 8,
+                                fontWeight: FontWeight.w700,
+                                color: OjraColors.textMuted,
+                                letterSpacing: 1.6,
+                              ),
+                            ),
+                          ),
+                          if (wide)
+                            Positioned(
+                              left: -20,
+                              top: height * 0.30,
+                              child: const _FloatingDispatchCard(),
+                            ),
+                          Positioned(
+                            right: 20,
+                            top: height * 0.26,
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+                              decoration: BoxDecoration(
+                                color: OjraColors.bg.withValues(alpha: 0.72),
+                                borderRadius: BorderRadius.circular(7),
+                                border: Border.all(color: OjraColors.surfaceBorder),
+                              ),
+                              child: Text(
+                                'RIDER · DRIVER · LIVE',
+                                style: TextStyle(
+                                  fontSize: 7.2,
+                                  fontWeight: FontWeight.w700,
+                                  color: OjraColors.primaryBright,
+                                  letterSpacing: 1.0,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Positioned(
+                            left: 18,
+                            right: 18,
+                            bottom: 18,
+                            child: _HeroInfoCard(wide: wide),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                Positioned(
+                  top: -14,
+                  left: wide ? -6 : 24,
+                  child: Transform.rotate(
+                    angle: 0.78539816339,
+                    child: Container(
+                      width: 10,
+                      height: 10,
+                      decoration: BoxDecoration(
+                        color: OjraColors.amber,
+                        boxShadow: [
+                          BoxShadow(
+                            color: OjraColors.amber.withValues(alpha: 0.65),
+                            blurRadius: 12,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class _GlassPill extends StatelessWidget {
+  const _GlassPill({required this.child});
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 7),
+      decoration: BoxDecoration(
+        color: OjraColors.bg.withValues(alpha: 0.68),
+        borderRadius: BorderRadius.circular(9),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.11)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.35),
+            blurRadius: 24,
+            offset: const Offset(0, 10),
+          ),
+        ],
+      ),
+      child: child,
+    );
+  }
+}
+
+class _FloatingDispatchCard extends StatefulWidget {
+  const _FloatingDispatchCard();
+
+  @override
+  State<_FloatingDispatchCard> createState() => _FloatingDispatchCardState();
+}
+
+class _FloatingDispatchCardState extends State<_FloatingDispatchCard>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 4),
+    )..repeat(reverse: true);
+  }
 
   @override
   void dispose() {
@@ -341,143 +651,286 @@ class _CircuitPuzzleState extends State<CircuitPuzzle> with SingleTickerProvider
 
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 1.0,
-      child: RepaintBoundary(
-        child: AnimatedBuilder(
-          animation: _controller,
-          builder: (context, _) => CustomPaint(
-            painter: _CircuitPainter(t: _controller.value),
+    final offset = Tween<double>(begin: -5, end: 5).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+    final card = Container(
+      width: 202,
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        color: OjraColors.bgElevated.withValues(alpha: 0.94),
+        borderRadius: BorderRadius.circular(13),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.12)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.45),
+            blurRadius: 38,
+            offset: const Offset(0, 14),
           ),
-        ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.bolt_rounded, size: 12, color: OjraColors.amber),
+              const SizedBox(width: 5),
+              const Text(
+                'LIVE DISPATCH',
+                style: TextStyle(
+                  fontSize: 7,
+                  fontWeight: FontWeight.w700,
+                  color: OjraColors.textSecondary,
+                  letterSpacing: 1.2,
+                ),
+              ),
+              const Spacer(),
+              const Text(
+                'NOW',
+                style: TextStyle(
+                  fontSize: 6.5,
+                  fontWeight: FontWeight.w700,
+                  color: OjraColors.amber,
+                  letterSpacing: 0.8,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          const Text(
+            'Nearby drivers matched in seconds.',
+            style: TextStyle(
+              fontSize: 10.5,
+              color: OjraColors.textPrimary,
+              height: 1.35,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const SizedBox(height: 10),
+          Row(
+            children: [
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: LinearProgressIndicator(
+                    value: 0.72,
+                    minHeight: 3,
+                    backgroundColor: Colors.white.withValues(alpha: 0.06),
+                    valueColor: const AlwaysStoppedAnimation(OjraColors.primaryBright),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              const Text(
+                '72%',
+                style: TextStyle(
+                  fontSize: 6.5,
+                  fontWeight: FontWeight.w700,
+                  color: OjraColors.textMuted,
+                  letterSpacing: 0.4,
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+    if (_reduceMotion(context)) return card;
+    return AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) {
+        return Transform.translate(offset: Offset(0, offset.value), child: child);
+      },
+      child: card,
+    );
+  }
+}
+
+class _HeroInfoCard extends StatelessWidget {
+  const _HeroInfoCard({required this.wide});
+  final bool wide;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.all(13),
+      decoration: BoxDecoration(
+        color: OjraColors.bgElevated.withValues(alpha: 0.94),
+        borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.11)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withValues(alpha: 0.35),
+            blurRadius: 30,
+            offset: const Offset(0, 12),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            padding: const EdgeInsets.all(6),
+            decoration: BoxDecoration(
+              gradient: OjraColors.brandGradient,
+              borderRadius: BorderRadius.circular(11),
+              boxShadow: [
+                BoxShadow(
+                  color: OjraColors.primary.withValues(alpha: 0.35),
+                  blurRadius: 18,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(7),
+              child: Image.asset(
+                'assets/images/rider_icon.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          const SizedBox(width: 11),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Text(
+                      'OJRA',
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800,
+                        color: OjraColors.textPrimary,
+                      ),
+                    ),
+                    const SizedBox(width: 7),
+                    Container(
+                      width: 4,
+                      height: 4,
+                      decoration: const BoxDecoration(
+                        color: OjraColors.amber,
+                        shape: BoxShape.circle,
+                      ),
+                    ),
+                    const SizedBox(width: 7),
+                    Text(
+                      'RIDER · DRIVER',
+                      style: TextStyle(
+                        fontSize: 6.5,
+                        fontWeight: FontWeight.w700,
+                        color: OjraColors.textMuted,
+                        letterSpacing: 1.1,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  wide ? 'Safe, fast rides across Algeria' : 'Safe, fast rides',
+                  style: const TextStyle(
+                    fontSize: 9.5,
+                    color: OjraColors.textSecondary,
+                    height: 1.2,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(width: 8),
+          Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: OjraColors.primary.withValues(alpha: 0.18),
+              border: Border.all(color: OjraColors.surfaceBorder),
+            ),
+            child: const Icon(
+              Icons.directions_car_rounded,
+              size: 14,
+              color: OjraColors.primaryBright,
+            ),
+          ),
+        ],
       ),
     );
   }
 }
 
-class _CircuitPainter extends CustomPainter {
-  final double t;
-  _CircuitPainter({required this.t});
+class _RoutePainter extends CustomPainter {
+  _RoutePainter({required this.progress}) : super(repaint: progress);
 
-  // Closed orthogonal circuit loop (corners, normalized 0..1). Every
-  // segment is strictly horizontal or vertical, like a PCB trace.
-  static const _loop = [
-    Offset(0.14, 0.74),
-    Offset(0.14, 0.50),
-    Offset(0.26, 0.50),
-    Offset(0.26, 0.34),
-    Offset(0.42, 0.34),
-    Offset(0.42, 0.20),
-    Offset(0.58, 0.20),
-    Offset(0.58, 0.34),
-    Offset(0.70, 0.34),
-    Offset(0.70, 0.50),
-    Offset(0.86, 0.50),
-    Offset(0.86, 0.66),
-    Offset(0.70, 0.66),
-    Offset(0.70, 0.76),
-    Offset(0.56, 0.76),
-    Offset(0.56, 0.68),
-    Offset(0.46, 0.68),
-    Offset(0.46, 0.76),
-    Offset(0.34, 0.76),
-    Offset(0.34, 0.90),
-    Offset(0.20, 0.90),
-    Offset(0.20, 0.76),
-    Offset(0.14, 0.76),
-  ];
-
-  // Decorative "puzzle" traces.
-  static const _decor = [
-    [Offset(0.08, 0.16), Offset(0.30, 0.16), Offset(0.30, 0.06)],
-    [Offset(0.72, 0.10), Offset(0.72, 0.26), Offset(0.92, 0.26)],
-    [Offset(0.06, 0.80), Offset(0.20, 0.80), Offset(0.20, 0.92)],
-    [Offset(0.88, 0.72), Offset(0.88, 0.84), Offset(0.96, 0.84)],
-  ];
-
-  Path _scaledLoop(Size s) {
-    final pts = _loop.map((p) => Offset(p.dx * s.width, p.dy * s.height)).toList();
-    final path = Path()..moveTo(pts.first.dx, pts.first.dy);
-    for (int i = 1; i < pts.length; i++) {
-      path.lineTo(pts[i].dx, pts[i].dy);
-    }
-    path.close();
-    return path;
-  }
+  final Animation<double> progress;
 
   @override
   void paint(Canvas canvas, Size size) {
-    final rrect = RRect.fromRectAndRadius(Offset.zero & size, const Radius.circular(30));
-    canvas.clipRRect(rrect);
+    final path = Path()
+      ..moveTo(size.width * 0.02, size.height * 0.66)
+      ..cubicTo(
+        size.width * 0.23, size.height * 0.50,
+        size.width * 0.35, size.height * 0.62,
+        size.width * 0.51, size.height * 0.47,
+      )
+      ..cubicTo(
+        size.width * 0.68, size.height * 0.32,
+        size.width * 0.76, size.height * 0.45,
+        size.width * 0.98, size.height * 0.20,
+      );
 
-    // Background
-    final bg = Paint()
-      ..shader = const LinearGradient(
-        begin: Alignment.topLeft,
-        end: Alignment.bottomRight,
-        colors: [Color(0xFF22101B), Color(0xFF160A11)],
-      ).createShader(Offset.zero & size);
-    canvas.drawRect(Offset.zero & size, bg);
+    final shader = LinearGradient(
+      colors: [
+        OjraColors.primaryBright.withValues(alpha: 0.0),
+        OjraColors.primaryBright.withValues(alpha: 0.50),
+        OjraColors.amber.withValues(alpha: 0.45),
+        Colors.transparent,
+      ],
+      stops: const [0, 0.18, 0.75, 1],
+    ).createShader(Offset.zero & size);
 
-    // Dot grid (puzzle board)
-    final dotPaint = Paint()..color = OjraColors.trace.withValues(alpha: 0.6);
-    for (int i = 1; i < 8; i++) {
-      for (int j = 1; j < 8; j++) {
-        canvas.drawCircle(Offset(size.width * i / 8, size.height * j / 8), 1.6, dotPaint);
-      }
-    }
-
-    // Decorative traces
-    final tracePaint = Paint()
-      ..color = OjraColors.trace
-      ..strokeWidth = 2.2
-      ..strokeCap = StrokeCap.round
-      ..style = PaintingStyle.stroke;
-    for (final seg in _decor) {
-      final p = Path()..moveTo(seg[0].dx * size.width, seg[0].dy * size.height);
-      for (int i = 1; i < seg.length; i++) {
-        p.lineTo(seg[i].dx * size.width, seg[i].dy * size.height);
-      }
-      canvas.drawPath(p, tracePaint);
-      for (final v in seg) {
-        canvas.drawCircle(Offset(v.dx * size.width, v.dy * size.height), 3.4, Paint()..color = OjraColors.trace);
-      }
-    }
-
-    // Main circuit loop
-    final loop = _scaledLoop(size);
-    final metric = loop.computeMetrics().first;
-
-    // Dim full loop
     canvas.drawPath(
-      loop,
+      path,
       Paint()
-        ..color = OjraColors.burgundy.withValues(alpha: 0.5)
+        ..shader = shader
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 3
-        ..strokeCap = StrokeCap.round,
+        ..strokeWidth = 6
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 9),
+    );
+    canvas.drawPath(
+      path,
+      Paint()
+        ..shader = shader
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1.2,
     );
 
-    // Waypoint pads
-    for (final p in _loop) {
-      canvas.drawCircle(Offset(p.dx * size.width, p.dy * size.height), 3.2, Paint()..color = OjraColors.traceBright);
+    final metric = path.computeMetrics().first;
+    for (final t in [0.15, 0.31, 0.48, 0.64, 0.8]) {
+      final tangent = metric.getTangentForOffset(metric.length * t);
+      if (tangent == null) continue;
+      canvas.drawCircle(
+        tangent.position, 2,
+        Paint()..color = Colors.white.withValues(alpha: 0.65),
+      );
+      canvas.drawCircle(
+        tangent.position, 5.5,
+        Paint()..color = OjraColors.primaryBright.withValues(alpha: 0.10),
+      );
     }
 
-    final distance = metric.length * t;
-    final tangent = metric.getTangentForOffset(distance);
-
-    // Electron
-    if (tangent != null) {
-      final pos = tangent.position;
-      canvas.drawCircle(pos, 16, Paint()..color = OjraColors.amber.withValues(alpha: 0.22));
-      canvas.drawCircle(pos, 9, Paint()..color = OjraColors.amber.withValues(alpha: 0.4));
-      canvas.drawCircle(pos, 5.5, Paint()..color = OjraColors.amber);
-      canvas.drawCircle(pos, 2.2, Paint()..color = Colors.white);
+    final head = metric.getTangentForOffset(metric.length * (0.1 + progress.value * 0.8));
+    if (head != null) {
+      canvas.drawCircle(head.position, 11, Paint()..color = OjraColors.amber.withValues(alpha: 0.14));
+      canvas.drawCircle(head.position, 4.5, Paint()..color = OjraColors.primaryBright.withValues(alpha: 0.25));
+      canvas.drawCircle(head.position, 1.8, Paint()..color = Colors.white);
     }
   }
 
   @override
-  bool shouldRepaint(covariant _CircuitPainter oldDelegate) => oldDelegate.t != t;
+  bool shouldRepaint(covariant _RoutePainter oldDelegate) => false;
 }
 
 /// App download card with icon + QR code (desktop) or install button (mobile).
